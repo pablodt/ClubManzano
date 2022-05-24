@@ -19,3 +19,82 @@ h2 {
     font-family: 'Josefin-Slab', serif;
     color: #17B914;
 }
+
+
+/* Para hacer un hover en el navbar */
+@media all and (min-width: 992px) {
+    .navbar .dropdown-menu-end {
+        right: 0;
+        left: auto;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+        margin-top: 0;
+    }
+
+    .navbar .nav-item:hover .nav-link {
+        color: #fff;
+    }
+
+    .navbar .dropdown-menu.fade-down {
+        top: 80%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+    }
+
+    .navbar .dropdown-menu.fade-up {
+        top: 180%;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        transition: .3s;
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+        transform: rotateX(0deg);
+    }
+}
+
+.col {
+    position: relative;
+    width: 50%;
+}
+
+.img {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: 300px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.col:hover .img {
+    opacity: 0.3;
+}
+
+.col:hover .middle {
+    opacity: 1;
+}
+
+.col:hover .text {
+    background-color: #04AA6D;
+    color: white;
+    font-size: 20px;
+    padding: 16px 32px;
+}
