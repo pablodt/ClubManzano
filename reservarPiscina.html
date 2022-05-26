@@ -18,7 +18,9 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/datePicker.css">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
@@ -36,7 +38,53 @@
     <!--CONTENT-->
     <div class="container-md mt-5">
         <h2 class="display-1">Reserva de piscina</h2>
+        <div class="row align-items-center mt-5">
+            <div class="col text-center">
+                <h1>CUSTOM<span>DATE</span>PICKER</h1>
+                <div class="date-picker">
+                    <div class="selected-date"></div>
+                    <div class="dates">
+                        <div class="month">
+                            <div class="arrows prev-mth">&lt;</div>
+                            <div class="mth"></div>
+                            <div class="arrows next-mth">&gt;</div>
+                        </div>
+
+                        <div class="days"></div>
+                    </div>
+                </div>
+                <script src="js/datePicker.js"></script>
+            </div>
+            <div class="col">
+                <h1>CUSTOM<span>DATE</span>PICKER</h1>
+                <div class="date-picker">
+                    <div class="selected-date"></div>
+                    <div class="dates">
+                        <div class="month">
+                            <div class="arrows prev-mth">&lt;</div>
+                            <div class="mth"></div>
+                            <div class="arrows next-mth">&gt;</div>
+                        </div>
+
+                        <div class="days"></div>
+                    </div>
+                </div>
+                <script src="js/datePicker.js"></script>
+            </div>
+        </div>
+        <div class="row align-items-center mt-5">
+            <div class="col text-center">
+                <button type="button" class="btn btn-danger btn-lg">Volver</button>
+            </div>
+            <div class="col text-center">
+                <button type="button" class="btn btn-success">Reservar</button>
+            </div>
+        </div>
     </div>
+    <script src="js/datePicker.js"></script>
+    </div>
+    </div>
+
     <!--CONTENT-->
 
     <!--FOOTER-->
