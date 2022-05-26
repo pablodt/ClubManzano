@@ -28,6 +28,14 @@
             $("#navbar").load("navbar.html");
             $("#footer").load("footer.html");
         });
+
+        function volver() {
+            window.location.href = "index.html";
+        }
+
+        function reservar() {
+            window.location.href = "reservar.html";
+        }
     </script>
 </head>
 
@@ -38,9 +46,9 @@
     <!--CONTENT-->
     <div class="container-md mt-5">
         <h2 class="display-1">Reserva de piscina</h2>
-        <div class="row align-items-center mt-5">
+        <div class="row align-items-center mx-1">
             <div class="col text-center">
-                <h1>CUSTOM<span>DATE</span>PICKER</h1>
+                <h1>Selector de fecha</h1>
                 <div class="date-picker">
                     <div class="selected-date"></div>
                     <div class="dates">
@@ -56,35 +64,57 @@
                 <script src="js/datePicker.js"></script>
             </div>
             <div class="col">
-                <h1>CUSTOM<span>DATE</span>PICKER</h1>
-                <div class="date-picker">
-                    <div class="selected-date"></div>
-                    <div class="dates">
-                        <div class="month">
-                            <div class="arrows prev-mth">&lt;</div>
-                            <div class="mth"></div>
-                            <div class="arrows next-mth">&gt;</div>
-                        </div>
-
-                        <div class="days"></div>
-                    </div>
+                <div class="texto-dia-seleccionado text-center">
+                    <script>
+                        document.write(document.querySelector('.date-picker .selected-date').textContent);
+                    </script>
                 </div>
-                <script src="js/datePicker.js"></script>
-            </div>
-        </div>
-        <div class="row align-items-center mt-5">
-            <div class="col text-center">
-                <button type="button" class="btn btn-danger btn-lg">Volver</button>
-            </div>
-            <div class="col text-center">
-                <button type="button" class="btn btn-success">Reservar</button>
-            </div>
-        </div>
-    </div>
-    <script src="js/datePicker.js"></script>
-    </div>
-    </div>
+                <div class="row">
+                    <article class="col-4 text-center">
+                        </br>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary">9:00</button></br></br>
+                        <button id="boton-fecha" type="button"
+                            class="btn btn-outline-secondary">10:00</button></br></br>
+                        <button id="boton-fecha" type="button"
+                            class="btn btn-outline-secondary">11:00</button></br></br>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary">12:00</button>
+                    </article>
+                    <article class="col-4 text-center">
+                        </br>
+                        <button id="boton-fecha" type="button"
+                            class="btn btn-outline-secondary">13:00</button></br></br>
+                        <button id="boton-fecha" type="button"
+                            class="btn btn-outline-secondary">14:00</button></br></br>
+                        <button id="boton-fecha" type="button"
+                            class="btn btn-outline-secondary">15:00</button></br></br>
+                        <button id="boton-fecha" type="button"
+                            class="btn btn-outline-secondary">16:00</button></br></br>
+                    </article>
+                    <article class="col-4 text-center">
+                        </br>
+                        <button id="boton-fecha" type="button"
+                            class="btn btn-outline-secondary">17:00</button></br></br>
+                        <button id="boton-fecha" type="button"
+                            class="btn btn-outline-secondary">18:00</button></br></br>
+                        <button id="boton-fecha" type="button"
+                            class="btn btn-outline-secondary">19:00</button></br></br>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary">20:00</button>
+                    </article>
+                </div>
 
+            </div>
+            <div class="row align-items-center mt-5">
+                <article class="col-6">
+                    <button type="button" class="btn btn-danger btn-lg" onclick="volver()">Volver</button>
+                </article>
+                <article class="col-6 text-end">
+                    <button type=" button" class="btn btn-success btn-lg" onclick="reservar()">Reservar</button>
+                </article>
+            </div>
+        </div>
+        <script src="js/datePicker.js"></script>
+    </div>
+    </div>
     <!--CONTENT-->
 
     <!--FOOTER-->

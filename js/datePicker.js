@@ -20,6 +20,7 @@ let selectedYear = year;
 
 mth_element.textContent = months[month] + ' ' + year;
 
+
 selected_date_element.textContent = formatDate(date);
 selected_date_element.dataset.value = selectedDate;
 
@@ -44,6 +45,7 @@ function goToNextMonth(e) {
         year++;
     }
     mth_element.textContent = months[month] + ' ' + year;
+
     populateDates();
 }
 
@@ -82,12 +84,16 @@ function populateDates(e) {
 
             selected_date_element.textContent = formatDate(selectedDate);
             selected_date_element.dataset.value = selectedDate;
-
             populateDates();
+            let doc = document.querySelector('.texto-dia-seleccionado');
+            if (doc != null) {
+                doc.textContent = formatDate(selectedDate);
+            }
         });
 
         days_element.appendChild(day_element);
     }
+
 }
 
 // HELPER FUNCTIONS

@@ -20,6 +20,16 @@ h2 {
     color: #17B914;
 }
 
+.texto-dia-seleccionado {
+    color: #313131;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+#boton-fecha {
+    width: 120px;
+    height: 50px;
+}
 
 /* Para hacer un hover en el navbar */
 @media all and (min-width: 992px) {
