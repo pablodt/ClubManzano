@@ -16,6 +16,12 @@ public class Usuario {
     @Basic
     @Column(name = "APELLIDOS")
     private String apellidos;
+    @Basic
+    @Column(name = "EMAIL")
+    private String email;
+    @Basic
+    @Column(name = "PASSW")
+    private String passw;
     @OneToMany(mappedBy = "usuario")
     private List<Reserva> reservas;
 
@@ -43,17 +49,33 @@ public class Usuario {
         this.apellidos = apellidos;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassw() {
+        return passw;
+    }
+
+    public void setPassw(String passw) {
+        this.passw = passw;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Usuario usuario = (Usuario) o;
-        return Objects.equals(id, usuario.id) && Objects.equals(nombre, usuario.nombre) && Objects.equals(apellidos, usuario.apellidos);
+        return Objects.equals(id, usuario.id) && Objects.equals(nombre, usuario.nombre) && Objects.equals(apellidos, usuario.apellidos) && Objects.equals(email, usuario.email) && Objects.equals(passw, usuario.passw);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, apellidos);
+        return Objects.hash(id, nombre, apellidos, email, passw);
     }
 
     public List<Reserva> getReservas() {
