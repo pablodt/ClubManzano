@@ -24,6 +24,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+        let selected_hora;
+
         $(document).ready(function () {
             $("#navbar").load("navbar.html");
             $("#footer").load("footer.html");
@@ -33,8 +35,13 @@
             window.location.href = "index.html";
         }
 
-        function reservar() {
-            window.location.href = "reservar.html";
+        function reservar(hora) {
+            window.location.href = "reservar/" + hora;
+        }
+
+        function cambiarHora(hora) {
+            selected_hora = hora;
+            console.log(selected_hora);
         }
     </script>
 </head>
@@ -72,33 +79,36 @@
                 <div class="row">
                     <article class="col-4 text-center">
                         </br>
-                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary">9:00</button></br></br>
-                        <button id="boton-fecha" type="button"
-                            class="btn btn-outline-secondary">10:00</button></br></br>
-                        <button id="boton-fecha" type="button"
-                            class="btn btn-outline-secondary">11:00</button></br></br>
-                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary">12:00</button>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                            onclick="cambiarHora('9:00')">9:00</button></br></br>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                            onclick="cambiarHora('10:00')">10:00</button></br></br>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                            onclick="cambiarHora('11:00')">11:00</button></br></br>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                            onclick="cambiarHora('12:00')">12:00</button>
                     </article>
                     <article class="col-4 text-center">
                         </br>
-                        <button id="boton-fecha" type="button"
-                            class="btn btn-outline-secondary">13:00</button></br></br>
-                        <button id="boton-fecha" type="button"
-                            class="btn btn-outline-secondary">14:00</button></br></br>
-                        <button id="boton-fecha" type="button"
-                            class="btn btn-outline-secondary">15:00</button></br></br>
-                        <button id="boton-fecha" type="button"
-                            class="btn btn-outline-secondary">16:00</button></br></br>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                            onclick="cambiarHora('13:00')">13:00</button></br></br>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                            onclick="cambiarHora('14:00')">14:00</button></br></br>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                            onclick="cambiarHora('15:00')">15:00</button></br></br>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                            onclick="cambiarHora('16:00')">16:00</button></br></br>
                     </article>
                     <article class="col-4 text-center">
                         </br>
-                        <button id="boton-fecha" type="button"
-                            class="btn btn-outline-secondary">17:00</button></br></br>
-                        <button id="boton-fecha" type="button"
-                            class="btn btn-outline-secondary">18:00</button></br></br>
-                        <button id="boton-fecha" type="button"
-                            class="btn btn-outline-secondary">19:00</button></br></br>
-                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary">20:00</button>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                            onclick="cambiarHora('17:00')">17:00</button></br></br>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                            onclick="cambiarHora('18:00')">18:00</button></br></br>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                            onclick="cambiarHora('19:00')">19:00</button></br></br>
+                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                            onclick="cambiarHora('20:00')">20:00</button>
                     </article>
                 </div>
 
@@ -108,7 +118,8 @@
                     <button type="button" class="btn btn-danger btn-lg" onclick="volver()">Volver</button>
                 </article>
                 <article class="col-6 text-end">
-                    <button type=" button" class="btn btn-success btn-lg" onclick="reservar()">Reservar</button>
+                    <button id="reservar" type="submit" class="btn btn-success btn-lg"
+                        onclick="reservar()">Reservar</button>
                 </article>
             </div>
         </div>
@@ -125,6 +136,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
+    <script>
+
+        let formulario = document.getElementById('reservar');
+
+        formulario.addEventListener('submit', e => {
+            e.preventDefault();
+
+            let peticion = {
+                method: 'POST',
+                body: selected_hora,
+            }
+
+            fetch('reservar.html', peticion)
+                .then(respuesta => respuesta.json())
+                .then(respuesta => {
+
+                }).catch(error => console.log('error', error));
+
+        });
+
+    </script>
 </body>
 
 </html>
