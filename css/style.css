@@ -20,6 +20,84 @@ h2 {
     color: #17B914;
 }
 
+.texto-dia-seleccionado {
+    color: #313131;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+#boton-fecha {
+    width: 120px;
+    height: 50px;
+}
+
+.buttonReserva {
+    background-color: #C4C4C4;
+    border: none;
+    color: #000000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.buttonReserva:focus {
+    background-color: #A5C9EA;
+}
+
+.buttonReserva:active {
+    background-color: #A5C9EA;
+}
+
+.buttonAtras {
+    background-color: #FF0000;
+    border: none;
+    color: #FFFFFF;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+.buttonReservar {
+    background-color: #04B962;
+    border: none;
+    color: #FFFFFF;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+    margin-right: 50px;
+}
+
+.bigtable {
+    padding: 60px;
+    border-collapse: separate;
+    border-spacing: 100px 0;
+}
+
+.table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
 /* Para hacer un hover en el navbar */
 @media all and (min-width: 992px) {

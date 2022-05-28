@@ -27,47 +27,27 @@
             $("#footer").load("footer.html");
         });
     </script>
+
+<script src="calendar-1/zabuto_calendar.min.js"></script>
+<link rel="stylesheet" type="text/css" href="calendar-1/zabuto_calendar.min.css">
+
 </head>
 
 <body>
     <!--NAVBAR-->
     <div id="navbar"></div>
     <!--NAVBAR-->
+
     <!--CONTENT-->
     <div class="container-lg mt-5">
-        <h2 class="display-1">Reserva de instalaciones</h2>
-        <div class="row align-items-center mt-5">
-            <div class="col text-center">
-                <img src="img/piscina.jpg" class="img" alt="piscina" width="250" height="250">
-                <div class="middle">
-                    <a href="reservarPiscina.html" class="text text-decoration-none">Reservar</a>
-                </div>
-                <h3 class="elements">Piscina</h3>
-            </div>
-            <div class="col text-center">
-                <img src="img/gimnasio.png" class="img" alt="gimnasio" width="250" height="250">
-                <div class="middle">
-                    <div class="middle">
-                        <a href="actividadesGimnasio.html" class="text text-decoration-none">Reservar</a>
-                    </div>
-                </div>
-                <h3 class="elements">Gimnasio</h3>
-            </div>
-            <div class="col text-center">
-                <img src="img/tenis.png" class="img" alt="tenis" width="250" height="250">
-                <div class="middle">
-                    <a href="#" class="text text-decoration-none">Reservar</a>
-                </div>
-                <h3 class="elements">Tenis</h3>
-            </div>
-            <div class="col text-center">
-                <img src="img/padel.png" class="img" alt="padel" width="250" height="250">
-                <div class="middle">
-                    <a href="#" class="text text-decoration-none">Reservar</a>
-                </div>
-                <h3 class="elements">P&aacute;del</h3>
-            </div>
-        </div>
+        <h2 class="display-1">P&aacute;del</h2>
+        <div id="my-calendar"></div>
+
+        <script type="application/javascript">
+            $(document).ready(function () {
+                $("#my-calendar").zabuto_calendar({ language: "en" });
+            });
+        </script>
     </div>
     <!--CONTENT-->
 
