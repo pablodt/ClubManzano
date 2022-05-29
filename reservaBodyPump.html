@@ -40,6 +40,8 @@
     </div>
     <!--CONTENT-->
 
+    <h2 id="h1_id" class="display-1"></h2>
+
     <table class="bigtable" width = "100%">
         <td>
             <table class="table center">
@@ -48,8 +50,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <button class="buttonReserva" disabled><s>10:00</s></button></br>
-                        <button class="buttonReserva">17:00</button></br>
+                        <button class="buttonReserva" disabled value="10:00"><s>10:00</s></button></br>
+                        <button class="buttonReserva" value="17:00" onclick="changeValue('17:00', 'Martes')">17:00</button></br>
                     </td>
                 </tr>
             </table>
@@ -61,8 +63,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <button class="buttonReserva">10:00</button></br>
-                        <button class="buttonReserva">17:00</button></br>
+                        <button class="buttonReserva" value="10:00" onclick="changeValue('10:00', 'Jueves')">10:00</button></br>
+                        <button class="buttonReserva" value="17:00" onclick="changeValue('17:00', 'Jueves')">17:00</button></br>
                     </td>
                 </tr>
             </table>
@@ -74,8 +76,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <button class="buttonReserva">11:00</button></br>
-                        <button class="buttonReserva">18:00</button></br>
+                        <button class="buttonReserva" value="11:00" onclick="changeValue('10:00', 'Viernes')">11:00</button></br>
+                        <button class="buttonReserva" value="18:00" onclick="changeValue('18:00', 'Viernes')">18:00</button></br>
                     </td>
                 </tr>
             </table>
@@ -83,12 +85,19 @@
     </table>
 
     <a href="actividadesGimnasio.html" class="buttonAtras">Atras</a>
-    <a href="#" class="buttonReservar">Reservar</a>
+    <a href="#" id="reservarButton" class="buttonReservar">Reservar</a>
 
     <!--FOOTER-->
     <div id="footer"></div>
     <!--FOOTER-->
 
+    <script type="text/javascript">
+        function changeValue(hora, dia) {
+            var link = document.getElementById("reservarButton");
+            link.setAttribute("href", "confirmacion.html?hora=" + hora + "&dia=" + dia);
+            return false;
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
