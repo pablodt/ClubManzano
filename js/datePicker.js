@@ -6,7 +6,7 @@ const next_mth_element = document.querySelector('.date-picker .dates .month .nex
 const prev_mth_element = document.querySelector('.date-picker .dates .month .prev-mth');
 const days_element = document.querySelector('.date-picker .dates .days');
 
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
 let date = new Date();
 let day = date.getDate();
@@ -85,7 +85,7 @@ function populateDates(e) {
             selected_date_element.textContent = formatDate(selectedDate);
             selected_date_element.dataset.value = selectedDate;
             populateDates();
-            let doc = document.querySelector('.texto-dia-seleccionado');
+            let doc = document.querySelector('.texto_dia_seleccionado');
             if (doc != null) {
                 doc.textContent = formatDate(selectedDate);
             }
