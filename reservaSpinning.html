@@ -27,9 +27,8 @@
             $("#footer").load("footer.html");
         });
 
-        let selected_hora;
-        let selected_dia;
-        function changeValue(hora, dia) {
+        let selected_hora, selected_dia;
+        function changeValue(hora, dia, button) {
             if (selected_hora == hora) {
                 selected_hora = undefined;
             } else {
@@ -92,8 +91,8 @@
                             </tr>
                             <tr>
                                 <td style="padding: 20px">
-                                    <button class="btn btn-outline-secondary sizeStyle" value="10:00" onclick="changeValue('10:00', 'Lunes 25/04')">10:00</button></br></br>
-                                    <button class="btn btn-outline-secondary sizeStyle" value="17:00" onclick="changeValue('17:00', 'Lunes 25/04')">17:00</button></br>
+                                    <button id="b1" class="btn btn-outline-secondary sizeStyle" value="10:00" onclick="changeValue('10:00', 'Lunes 25/04', 'b1')">10:00</button></br></br>
+                                    <button id="b1_1" class="btn btn-outline-secondary sizeStyle" value="17:00" onclick="changeValue('17:00', 'Lunes 25/04', 'b1_1')">17:00</button></br>
                                 </td>
                             </tr>
                         </table>
@@ -107,8 +106,8 @@
                             </tr>
                             <tr>
                                 <td style="padding: 20px">
-                                    <button class="btn btn-outline-secondary sizeStyle" value="10:00" onclick="changeValue('10:00', 'Miercoles 27/04')"">10:00</button></br></br>
-                                    <button class="btn btn-outline-secondary sizeStyle" value="17:00" onclick="changeValue('17:00', 'Miercoles 27/04')">17:00</button></br>
+                                    <button id="b2" class="btn btn-outline-secondary sizeStyle" value="10:00" onclick="changeValue('10:00', 'Miercoles 27/04', 'b2')"">10:00</button></br></br>
+                                    <button id="b2_1" class="btn btn-outline-secondary sizeStyle" value="17:00" onclick="changeValue('17:00', 'Miercoles 27/04', 'b2_1')">17:00</button></br>
                                 </td>
                             </tr>
                         </table>
@@ -122,8 +121,8 @@
                             </tr>
                             <tr>
                                 <td style="padding: 20px">
-                                    <button class="btn btn-outline-secondary sizeStyle" value="11:00" onclick="changeValue('11:00', 'Viernes 29/04')">11:00</button></br></br>
-                                    <button class="btn btn-outline-secondary sizeStyle" value="18:00" onclick="changeValue('18:00', 'Viernes 29/04')" disabled><s>18:00</s></button></br>
+                                    <button id="b3" class="btn btn-outline-secondary sizeStyle" value="11:00" onclick="changeValue('11:00', 'Viernes 29/04', 'b3')">11:00</button></br></br>
+                                    <button id="b3_1" class="btn btn-outline-secondary sizeStyle" value="18:00" onclick="changeValue('18:00', 'Viernes 29/04', 'b3_1')" disabled><s>18:00</s></button></br>
                                 </td>
                             </tr>
                         </table>
@@ -151,13 +150,13 @@
 
     <script type="text/javascript">
         function confirmarReserva(hora, dia) {
-            if (hora != undefined) {
-                window.location.href = "confirmacion.html?hora=" + hora + "&actividad=Spinning&dia=" + dia;
-            } else {
-                $.getScript("js/popup.js", function () {
-                    pop_up();
-                });
-            }
+                if (hora != undefined) {
+                    window.location.href = "confirmacion.html?hora=" + hora + "&actividad=Spinning&dia=" + dia;
+                } else {
+                    $.getScript("js/popup.js", function () {
+                        pop_up();
+                    });
+                }
         }
     </script>
 </body>

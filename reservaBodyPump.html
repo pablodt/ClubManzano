@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
 
 <head>
     <meta charset="utf-8">
@@ -26,6 +26,8 @@
             $("#navbar").load("navbar.html");
             $("#footer").load("footer.html");
         });
+
+        
 
         let selected_hora;
         let selected_dia;
@@ -56,7 +58,7 @@
 </head>
 
 
-<body>
+<body id="body">
     <!--NAVBAR-->
     <div id="navbar"></div>
     <!--NAVBAR-->
@@ -69,18 +71,7 @@
 
         <div class="row align-items-center mx-1">
 
-            <!-- Pop-up -->
-            <div class="popup_box">
-                <i class="fas fa-exclamation"></i>
-                <h1>Error</h1>
-                <label>¡Debe introducir una fecha!</label>
-                <div class="btns">
-                    <a href="#" class="btn1">Volver</a>
-                </div>
-            </div>
-            <script src="js/popup.js"></script>
-            <!-- Pop-up -->
-
+            
             <div id="tables">
                 <table class="bigtable" width="100%">
                     <td width="33%">
@@ -159,6 +150,10 @@
                 });
             }
         }
+    </script>
+
+    <script>
+    
     </script>
 </body>
 
