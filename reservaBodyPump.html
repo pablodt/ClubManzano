@@ -28,7 +28,7 @@
             $("#footer").load("footer.html");
         });
 
-        
+
 
         let selected_hora;
         let selected_dia;
@@ -71,8 +71,17 @@
         <!--CONTENT-->
 
         <div class="row align-items-center mx-1">
-
-            
+            <!-- Pop-up -->
+            <div class="popup_box">
+                <i class="fas fa-exclamation"></i>
+                <h1>Error</h1>
+                <label>¡Debe introducir una fecha!</label>
+                <div class="btns">
+                    <a class="btn1">Volver</a>
+                </div>
+            </div>
+            <script src="js/popup.js"></script>
+            <!-- Pop-up -->
             <div id="tables">
                 <table class="bigtable" width="100%">
                     <td width="33%">
@@ -163,7 +172,7 @@
     </script>
 
     <script>
-    
+
     </script>
 </body>
 
