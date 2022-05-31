@@ -129,7 +129,7 @@
                     <button type="button" class="btn btn-danger btn-lg" onclick="volver()">Volver</button>
                 </article>
                 <article class="col-6 text-end">
-                    <button id="reservar" type="submit" class="btn btn-success btn-lg">Reservar</button>
+                    <a href="#" id="reservarButton" class="btn btn-success btn-lg">Reservar</a>
                 </article>
             </div>
         </div>
@@ -176,7 +176,7 @@
         function cambiarPista(pista) {
             selected_pista = pista;
             console.log(selected_pista);
-            var link = document.getElementById("reservar");
+            var link = document.getElementById("reservarButton");
             link.setAttribute("href", "confirmacionPadel.html?hora=" + selected_hora + "&dia=" + selected_fecha + "&pista=" + selected_pista);
         }
     </script>
