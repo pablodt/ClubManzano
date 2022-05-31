@@ -45,11 +45,6 @@
             randomReservas();
             console.log(selected_hora);
         }
-
-        function cambiarPista(pista) {
-            selected_pista = pista;
-            console.log(selected_pista);
-        }
     </script>
 </head>
 
@@ -121,11 +116,11 @@
             </div>
 
             <div class="row mt-5" id="pistas">
-                <button id="1" type="button" class="btn btn-outline-secondary w-25 m-3 col"
+                <button id="pista1" type="button" class="btn btn-outline-secondary w-25 m-3 col"
                     onclick="cambiarPista('1')">Pista 1</button></br></br>
-                <button id="2" type="button" class="btn btn-outline-secondary w-25 m-3 col"
+                <button id="pista2" type="button" class="btn btn-outline-secondary w-25 m-3 col"
                     onclick="cambiarPista('2')">Pista 2</button></br></br>
-                <button id="3" type="button" class="btn btn-outline-secondary w-25 m-3 col"
+                <button id="pista3" type="button" class="btn btn-outline-secondary w-25 m-3 col"
                     onclick="cambiarPista('3')">Pista 3</button></br></br>
             </div>
 
@@ -134,8 +129,7 @@
                     <button type="button" class="btn btn-danger btn-lg" onclick="volver()">Volver</button>
                 </article>
                 <article class="col-6 text-end">
-                    <button id="reservar" type="submit" class="btn btn-success btn-lg"
-                        onclick="reservar()">Reservar</button>
+                    <button id="reservar" type="submit" class="btn btn-success btn-lg">Reservar</button>
                 </article>
             </div>
         </div>
@@ -167,40 +161,24 @@
 
             if (num1.toString() == "1") {
                 console.log("num1: 1");
-                $(document).ready(function () {
-                    $("1").prop('disabled', true);
-                });
+
             } else if (num1.toString() == "2") {
                 console.log("num1: 2");
-                $(document).ready(function () {
-                    $("2").prop('disabled', true);
-                });
             } else if (num1.toString() == "3") {
                 console.log("num1: 3");
-                $(document).ready(function () {
-                    $("3").prop('disabled', true);
-                });
             }
+
+
         }
+    </script>
 
-        let formulario = document.getElementById('reservar');
-
-        formulario.addEventListener('submit', e => {
-            e.preventDefault();
-
-            let peticion = {
-                method: 'POST',
-                body: selected_fecha, selected_hora, selected_pista
-            }
-
-            fetch('reservar.html', peticion)
-                .then(respuesta => respuesta.json())
-                .then(respuesta => {
-
-                }).catch(error => console.log('error', error));
-
-        });
-
+    <script>
+        function cambiarPista(pista) {
+            selected_pista = pista;
+            console.log(selected_pista);
+            var link = document.getElementById("reservar");
+            link.setAttribute("href", "confirmacionPadel.html?hora=" + selected_hora + "&dia=" + selected_fecha + "&pista=" + selected_pista);
+        }
     </script>
 </body>
 
