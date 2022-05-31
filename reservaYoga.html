@@ -26,6 +26,32 @@
             $("#navbar").load("navbar.html");
             $("#footer").load("footer.html");
         });
+
+        let selected_hora;
+        let selected_dia;
+        function changeValue(hora, dia) {
+            if (selected_hora == hora) {
+                selected_hora = undefined;
+            } else {
+                selected_hora = hora;
+            }
+
+            if (selected_dia == dia) {
+                selected_dia = undefined;
+            } else {
+                selected_dia = dia;
+            }
+        }
+
+        function volver() {
+            window.location.href = "actividadesGimnasio.html";
+        }
+
+        
+    </script>
+
+    <script>
+        
     </script>
 </head>
 
@@ -35,64 +61,105 @@
     <div id="navbar"></div>
     <!--NAVBAR-->
     <!--CONTENT-->
-    <div style="margin-left: 50px; margin-top: 50px">
-        <h1 style="font-size:3vw">Yoga 1 hora</h1>
+
+    <div class="container-md mt-5">
+
+        <h2 class="display-1">Yoga 1 hora</h2>
+        <!--CONTENT-->
+
+        <div class="row align-items-center mx-1">
+
+            <!-- Pop-up -->
+            <div class="popup_box">
+                <i class="fas fa-exclamation"></i>
+                <h1>Error</h1>
+                <label>¡Debe introducir una fecha!</label>
+                <div class="btns">
+                    <a href="#" class="btn1">Volver</a>
+                </div>
+            </div>
+            <script src="js/popup.js"></script>
+            <!-- Pop-up -->
+
+            <div id="tables">
+                <table class="bigtable" width="100%">
+                    <td width="33%">
+                        <table class="table center">
+                            <tr>
+                                <th>
+                                    <h3 class="elements">Lunes 25/04</h3>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 20px">
+                                    <button class="btn btn-outline-secondary sizeStyle" value="10:00" onclick="changeValue('10:00', 'Lunes 25/04')">10:00</button></br></br>
+                                    <button class="btn btn-outline-secondary sizeStyle" value="17:00" onclick="changeValue('17:00', 'Lunes 25/04')">17:00</button></br>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="34%">
+                        <table class="table center">
+                            <tr>
+                                <th>
+                                    <h3 class="elements">Miercoles 27/04</h3>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 20px">
+                                    <button class="btn btn-outline-secondary sizeStyle" value="10:30" onclick="changeValue('10:30', 'Miercoles 27/04')"">10:30</button></br></br>
+                                    <button class="btn btn-outline-secondary sizeStyle" value="18:30" onclick="changeValue('18:30', 'Miercoles 27/04')">18:30</button></br>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="33%">
+                        <table class="table center">
+                            <tr>
+                                <th>
+                                    <h3 class="elements">Viernes 29/04</h3>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 20px">
+                                    <button class="btn btn-outline-secondary sizeStyle" value="11:00" onclick="changeValue('11:00', 'Viernes 29/04')">11:00</button></br></br>
+                                    <button class="btn btn-outline-secondary sizeStyle" value="18:00" onclick="changeValue('18:00', 'Viernes 29/04')">18:00</button></br>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </table>
+            </div>
+
+            <div class="row align-items-center mt-5">
+                <article class="col-6">
+                    <button type="button" class="btn btn-danger btn-lg" onclick="volver()">Atras</button>
+                </article>
+                <article class="col-6 text-end">
+                    <button id="reservarButton" class="btn btn-success btn-lg" onclick="confirmarReserva(selected_hora, selected_dia)">Reservar</button>
+                </article>
+            </div>
+        </div>
     </div>
-    <!--CONTENT-->
-
-    <table class="bigtable" width = "100%">
-        <td>
-            <table class="table center">
-                <tr>
-                    <th><h3 class="elements">Lunes 25/04</h3></th>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="buttonReserva">10:00</button></br>
-                        <button class="buttonReserva">17:00</button></br>
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table class="table center">
-                <tr>
-                    <th><h3 class="elements">Miércoles 27/04</h3></th>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="buttonReserva">10:30</button></br>
-                        <button class="buttonReserva">17:30</button></br>
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table class="table center">
-                <tr>
-                    <th><h3 class="elements">Viernes 29/04</h3></th>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="buttonReserva">11:00</button></br>
-                        <button class="buttonReserva">18:00</button></br>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </table>
-
-    <a href="actividadesGimnasio.html" class="buttonAtras">Atras</a>
-    <a href="#" class="buttonReservar">Reservar</a>
-
     <!--FOOTER-->
     <div id="footer"></div>
     <!--FOOTER-->
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        function confirmarReserva(hora, dia) {
+            if (hora != undefined) {
+                window.location.href = "confirmacion.html?hora=" + hora + "&actividad=Yoga&dia=" + dia;
+            } else {
+                $.getScript("js/popup.js", function () {
+                    pop_up();
+                });
+            }
+        }
+    </script>
 </body>
 
 </html>

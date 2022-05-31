@@ -19,71 +19,130 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/datePicker.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+        let selected_hora;
+
         $(document).ready(function () {
             $("#navbar").load("navbar.html");
             $("#footer").load("footer.html");
         });
+
+        function volver() {
+            window.location.href = "actividadesGimnasio.html";
+        }
+
+        function cambiarHora(hora) {
+            if (selected_hora == hora) {
+                selected_hora = undefined;
+            } else {
+                selected_hora = hora;
+            }
+        }
     </script>
 </head>
-
 
 <body>
     <!--NAVBAR-->
     <div id="navbar"></div>
     <!--NAVBAR-->
     <!--CONTENT-->
-    <div style="margin-left: 50px; margin-top: 50px">
-        <h1 style="font-size:3vw">Gimnasio 1 hora</h1>
+    <div class="container-md mt-5">
+        <h2 class="display-1 mb-5">Reserva de gimnasio</h2>
+        <div class="row align-items-center mx-1">
+            <div class="col text-center">
+                <h1>Selector de fecha</h1>
+                <div class="date-picker">
+                    <div class="selected-date"></div>
+                    <div class="dates active">
+                        <div class="month">
+                            <div class="arrows prev-mth">&lt;</div>
+                            <div class="mth"></div>
+                            <div class="arrows next-mth">&gt;</div>
+                        </div>
+
+                        <div class="days"></div>
+                    </div>
+                </div>
+                <script src="js/datePicker.js"></script>
+            </div>
+            <!-- Pop-up -->
+            <div class="popup_box">
+                <i class="fas fa-exclamation"></i>
+                <h1>Error</h1>
+                <label>¡Debe introducir una fecha!</label>
+                <div class="btns">
+                    <a href="#" class="btn1">Volver</a>
+                </div>
+            </div>
+            <script src="js/popup.js"></script>
+            <!-- Pop-up -->
+            <div class="col">
+                <table class="table center">
+                    <tr>
+                        <td>
+                            <div class="texto_dia_seleccionado text-center">
+                                <script> document.write(document.querySelector('.date-picker .selected-date').textContent)</script>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <article class="col-4 text-center">
+                                    </br>
+                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                                        onclick="cambiarHora('9:00')">9:00</button></br></br>
+                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                                        onclick="cambiarHora('10:00')">10:00</button></br></br>
+                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                                        onclick="cambiarHora('11:00')">11:00</button></br></br>
+                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                                        onclick="cambiarHora('12:00')">12:00</button>
+                                </article>
+                                <article class="col-4 text-center">
+                                    </br>
+                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                                        onclick="cambiarHora('13:00')">13:00</button></br></br>
+                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                                        onclick="cambiarHora('14:00')">14:00</button></br></br>
+                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                                        onclick="cambiarHora('15:00')">15:00</button></br></br>
+                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                                        onclick="cambiarHora('16:00')">16:00</button></br></br>
+                                </article>
+                                <article class="col-4 text-center">
+                                    </br>
+                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                                        onclick="cambiarHora('17:00')">17:00</button></br></br>
+                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                                        onclick="cambiarHora('18:00')">18:00</button></br></br>
+                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                                        onclick="cambiarHora('19:00')">19:00</button></br></br>
+                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
+                                        onclick="cambiarHora('20:00')">20:00</button>
+                                </article>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="row align-items-center mt-5">
+                <article class="col-6">
+                    <button type="button" class="btn btn-danger btn-lg" onclick="volver()">Volver</button>
+                </article>
+                <article class="col-6 text-end">
+                    <button id="reservarButton" type="submit" class="btn btn-success btn-lg"
+                        onclick="pasarParametros(selected_hora,selectedDay + ' ' + mth_element.textContent)">Reservar</button>
+                </article>
+            </div>
+        </div>
     </div>
     <!--CONTENT-->
-
-    <table class="bigtable" width = "100%">
-        <td>
-            <table class="table center">
-                <tr>
-                    <th><h3 class="elements">Lunes 25/04</h3></th>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="buttonReserva" disabled><s>10:00</s></button></br>
-                        <button class="buttonReserva">10:30</button></br>
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table class="table center">
-                <tr>
-                    <th><h3 class="elements">Miércoles 27/04</h3></th>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="buttonReserva">10:00</button></br>
-                        <button class="buttonReserva" disabled ><s>10:30</s></button></br>
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table class="table center">
-                <tr>
-                    <th><h3 class="elements">Viernes 29/04</h3></th>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="buttonReserva">10:00</button></br>
-                        <button class="buttonReserva">10:30</button></br>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </table>
-
-    <a href="actividadesGimnasio.html" class="buttonAtras">Atras</a>
-    <a href="#" class="buttonReservar">Reservar</a>
 
     <!--FOOTER-->
     <div id="footer"></div>
@@ -93,6 +152,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function pasarParametros(hora, dia) {
+            if (hora != undefined) {
+                window.location.href = "confirmacion.html?hora=" + hora + "&actividad=Gimnasio&dia=" + dia;
+            } else {
+                $.getScript("js/popup.js", function () {
+                    pop_up();
+                });
+            }
+        }
+    </script>
+
+    </script>
 </body>
 
 </html>
