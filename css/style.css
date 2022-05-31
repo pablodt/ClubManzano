@@ -76,7 +76,7 @@ h2 {
     font-size: 25px;
     margin: 4px 2px;
     cursor: pointer;
-
+    float: right;
     margin-right: 50px;
 }
 
@@ -228,8 +228,8 @@ h2 {
 #confirmarButtom {
     font-size: 40px;
     background-color: #04B962;
-    height: 100px;
-    width: 300px;
+    height: 80px;
+    width: 290px;
     margin-right: 70px;
 }
 
@@ -238,5 +238,5 @@ h2 {
 }
 
 .exito {
-    color: rgb(0, 112, 15);
+    color: rgb(2, 161, 24);
 }

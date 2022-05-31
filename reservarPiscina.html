@@ -36,8 +36,11 @@
         }
 
         function cambiarHora(hora) {
-            selected_hora = hora;
-            console.log(selected_hora);
+            if (selected_hora == hora) {
+                selected_hora = undefined;
+            } else {
+                selected_hora = hora;
+            }
         }
     </script>
 </head>
@@ -125,7 +128,7 @@
                 </article>
                 <article class="col-6 text-end">
                     <button id="reservarButton" type="submit" class="btn btn-success btn-lg"
-                        onclick="pasarParametros(selected_hora,day + ' ' + mth_element.textContent)">Reservar</button>
+                        onclick="pasarParametros(selected_hora,selectedDay + ' ' + mth_element.textContent)">Reservar</button>
                 </article>
             </div>
         </div>
