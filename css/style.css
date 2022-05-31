@@ -225,6 +225,7 @@ h2 {
 .btns .btn1:hover {
     transition: .5s;
     background: #8c8c8c;
+    cursor: pointer;
 }
 
 .container-Reservar {
