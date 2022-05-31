@@ -79,7 +79,9 @@
             </div>
             <!-- Pop-up -->
             <div class="col">
-                <div class="texto_dia_seleccionado text-center"></div>
+                <div class="texto_dia_seleccionado text-center">
+                    <script> document.write(document.querySelector('.date-picker .selected-date').textContent)</script>
+                </div>
                 <div class="row">
                     <article class="col-4 text-center">
                         </br>
@@ -142,7 +144,7 @@
     <script type="text/javascript">
         function pasarParametros(hora, dia) {
             if (hora != undefined) {
-                window.location.href = "confirmacion.html?hora=" + hora + "&dia=" + dia;
+                window.location.href = "confirmacion.html?hora=" + hora + "&actividad=Piscina&dia=" + dia;
             } else {
                 $.getScript("js/popup.js", function () {
                     pop_up();

@@ -42,16 +42,19 @@
 
     <h2 id="h1_id" class="display-1"></h2>
 
-    <table class="bigtable" width = "100%">
+    <table class="bigtable" width="100%">
         <td>
             <table class="table center">
                 <tr>
-                    <th><h3 class="elements">Martes 26/04</h3></th>
+                    <th>
+                        <h3 class="elements">Martes 26/04</h3>
+                    </th>
                 </tr>
                 <tr>
                     <td>
                         <button class="buttonReserva" disabled value="10:00"><s>10:00</s></button></br>
-                        <button class="buttonReserva" value="17:00" onclick="changeValue('17:00', 'Martes')">17:00</button></br>
+                        <button class="buttonReserva" value="17:00"
+                            onclick="changeValue('17:00', 'Martes')">17:00</button></br>
                     </td>
                 </tr>
             </table>
@@ -59,12 +62,16 @@
         <td>
             <table class="table center">
                 <tr>
-                    <th><h3 class="elements">Jueves 28/04</h3></th>
+                    <th>
+                        <h3 class="elements">Jueves 28/04</h3>
+                    </th>
                 </tr>
                 <tr>
                     <td>
-                        <button class="buttonReserva" value="10:00" onclick="changeValue('10:00', 'Jueves')">10:00</button></br>
-                        <button class="buttonReserva" value="17:00" onclick="changeValue('17:00', 'Jueves')">17:00</button></br>
+                        <button class="buttonReserva" value="10:00"
+                            onclick="changeValue('10:00', 'Jueves')">10:00</button></br>
+                        <button class="buttonReserva" value="17:00"
+                            onclick="changeValue('17:00', 'Jueves')">17:00</button></br>
                     </td>
                 </tr>
             </table>
@@ -72,12 +79,16 @@
         <td>
             <table class="table center">
                 <tr>
-                    <th><h3 class="elements">Viernes 29/04</h3></th>
+                    <th>
+                        <h3 class="elements">Viernes 29/04</h3>
+                    </th>
                 </tr>
                 <tr>
                     <td>
-                        <button class="buttonReserva" value="11:00" onclick="changeValue('10:00', 'Viernes')">11:00</button></br>
-                        <button class="buttonReserva" value="18:00" onclick="changeValue('18:00', 'Viernes')">18:00</button></br>
+                        <button class="buttonReserva" value="11:00"
+                            onclick="changeValue('10:00', 'Viernes')">11:00</button></br>
+                        <button class="buttonReserva" value="18:00"
+                            onclick="changeValue('18:00', 'Viernes')">18:00</button></br>
                     </td>
                 </tr>
             </table>
@@ -93,9 +104,7 @@
 
     <script type="text/javascript">
         function changeValue(hora, dia) {
-            var link = document.getElementById("reservarButton");
-            link.setAttribute("href", "confirmacion.html?hora=" + hora + "&dia=" + dia);
-            return false;
+            window.location.href = "confirmacion.html?hora=" + hora + "&actividad=BodyJump&dia=" + dia;
         }
     </script>
 
