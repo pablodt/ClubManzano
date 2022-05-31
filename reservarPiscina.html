@@ -50,12 +50,22 @@
     <!--NAVBAR-->
     <div id="navbar"></div>
     <!--NAVBAR-->
+    <!-- Pop-up -->
+    <div class="popup_box">
+        <i class="fas fa-exclamation"></i>
+        <h1>Error</h1>
+        <label>¡Debe introducir una hora!</label>
+        <div class="btns">
+            <a class="btn1">Volver</a>
+        </div>
+    </div>
+    <script src="js/popup.js"></script>
+    <!-- Pop-up -->
     <!--CONTENT-->
     <div class="container-md mt-5">
         <h2 class="display-1">Reserva de piscina</h2>
         <div class="row align-items-center mx-1">
-            <div class="col text-center">
-                <h1>Selector de fecha</h1>
+            <div id="datepicker-full" class="col text-center ">
                 <div class="date-picker">
                     <div class="selected-date"></div>
                     <div class="dates active">
@@ -70,17 +80,6 @@
                 </div>
                 <script src="js/datePicker.js"></script>
             </div>
-            <!-- Pop-up -->
-            <div class="popup_box">
-                <i class="fas fa-exclamation"></i>
-                <h1>Error</h1>
-                <label>¡Debe introducir una hora!</label>
-                <div class="btns">
-                    <a class="btn1">Volver</a>
-                </div>
-            </div>
-            <script src="js/popup.js"></script>
-            <!-- Pop-up -->
             <div class="col">
                 <div class="texto_dia_seleccionado text-center">
                     <script> document.write(document.querySelector('.date-picker .selected-date').textContent)</script>
