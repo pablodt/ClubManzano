@@ -28,13 +28,9 @@ h2 {
     margin-bottom: 30px;
 }
 
-.boton-fecha {
+#boton-fecha {
     width: 120px;
     height: 50px;
-}
-
-.boton-fecha.active {
-    background: #04AA6D;
 }
 
 .buttonReserva {
