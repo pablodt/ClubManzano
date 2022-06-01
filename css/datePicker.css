@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 320px;
     height: 60px;
-    background-color: #fbecce;
+    background-color: #ffcf6e;
     margin-top: 0px;
     margin-right: 200px;
     margin-bottom: 300px;
@@ -14,9 +14,6 @@
     user-select: none;
 }
 
-.date-picker:hover {
-    background-color: #a09f9f;
-}
 
 .date-picker .selected-date {
     width: 100%;
@@ -42,7 +39,7 @@
     left: 0;
     right: 0;
 
-    background-color: #fbecce;
+    background-color: #fbf4e6;
 }
 
 .date-picker .dates.active {
@@ -88,7 +85,7 @@
 }
 
 .date-picker .dates .days .day.selected {
-    background-color: #00CA85;
+    background-color: #ebd576;
 }
 
 .date-picker .dates .day:hover {
