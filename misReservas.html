@@ -19,13 +19,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/datePicker.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+        let selected_hora;
         $(document).ready(function () {
             $("#navbar").load("navbar.html");
             $("#footer").load("footer.html");
         });
+
+        function volver() {
+            window.location.href = "index.html";
+        }
+
+        function eliminarReserva(reserva) {
+            document.getElementById(reserva).classList.remove(reserva);
+
+        }
+
+        function anadirReserva(reserva) {
+            document.getElementById(reserva).classList.remove('d-none');
+
+        }
+        function ocultarReserva(reserva) {
+            document.getElementById(reserva).classList.add('d-none');
+        }
     </script>
 </head>
 
@@ -34,14 +53,129 @@
     <!--NAVBAR-->
     <div id="navbar"></div>
     <!--NAVBAR-->
+
     <!--CONTENT-->
-    <div style="margin-left: 50px; margin-top: 50px">
+    <div style="margin-left: 50px; margin-top: 50px;">
         <h1 style="font-size:3vw">Mis reservas</h1>
     </div>
+
+    <div class="row align-items-center mx-1">
+        <article class="col-3">
+            <div class="date-picker" style="margin-top: 70px;">
+                <div class="selected-date"></div>
+                <div class="dates">
+                    <div class="month">
+                        <div class="arrows prev-mth">&lt;</div>
+                        <div class="mth"></div>
+                        <div class="arrows next-mth">&gt;</div>
+                    </div>
+                    
+                    <div class="days"></div>
+                </div>
+            </div>
+            <script src="js/datePicker.js"></script>
+        </article>
+
+        <article class="col-2">
+            <div class="col text-center">
+                <table class="table">
+                    <tr><td><div class="texto-filtro text-center">FILTROS</td></tr>
+                    <tr>
+                        <td class="table"><div class="texto-filtros text-center">Piscina</div></td>
+                        <td class="table"><input type="checkbox" onclick="anadirReserva('Piscina10:00')"></td>
+                    </tr>
+                    <tr>
+                        <td class="table"><div class="texto-filtros text-center">Sala musculacion</div></td>
+                        <td><input type="checkbox" onclick="anadirReserva('Sala musculacion17:00')"></td>
+                    </tr>
+                    <tr>
+                        <td class="table"><div class="texto-filtros text-center">Padel</div></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td class="table"><div class="texto-filtros text-center">Actividades</div></td>
+                        <td><input type="checkbox" onclick="anadirReserva('Yoga19:00')"></td>
+                        
+                    </tr>
+                </table>
+            </div>
+        </article>
+
+        <article class="col-1"></article>
+        <article class="col-6">
+            <div class="textoF text-center">
+                <script> document.write(document.querySelector('.date-picker .selected-date').textContent)</script>
+            </div>
+            <div class="col text-center">
+                <table class="table">
+                    <tr id="Piscina10:00">
+                        <td>
+                            <div class="texto-reserva text-center">
+                                Piscina
+                            </div>
+                        </td>
+                        <td>
+                            <div class="texto-reserva text-center">
+                                -->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="texto-reserva text-center">
+                                10:00
+                            </div>
+                        </td>
+                        <td>
+                            <button id="boton-cancelar" type="button" class="buttonCancelar"
+                                onclick="eliminarReserva('Piscina10:00')">Cancelar Reserva</button>
+                        </td>
+                    </tr>
+                    <tr id="Sala musculacion17:00">
+                        <td>
+                            <div class="texto-reserva text-center">
+                                Sala musculacion
+                            </div>
+                        </td>
+                        <td>
+                            <div class="texto-reserva text-center">
+                                -->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="texto-reserva text-center">
+                                17:00
+                            </div>
+                        </td>
+                        <td>
+                            <button id="boton-cancelar" type="button" class="buttonCancelar"
+                                onclick="eliminarReserva('Sala musculacion17:00')">Cancelar Reserva</button>
+                        </td>
+                    </tr>
+                    <tr id = Yoga19:00>
+                        <td>
+                            <div class="texto-reserva text-center">
+                                Yoga
+                            </div>
+                        </td>
+                        <td>
+                            <div class="texto-reserva text-center">
+                                -->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="texto-reserva text-center">
+                                19:00
+                            </div>               
+                        </td>
+                        <td>
+                            <button id="boton-cancelar" type="button" class="buttonCancelar"
+                                onclick="eliminarReserva('Yoga19:00')">Cancelar Reserva</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </article>
+    </div> 
     <!--CONTENT-->
-
-
-   
 
     <!--FOOTER-->
     <div id="footer"></div>
