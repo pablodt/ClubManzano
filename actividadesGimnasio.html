@@ -26,6 +26,10 @@
             $("#navbar").load("navbar.html");
             $("#footer").load("footer.html");
         });
+
+        function volver() {
+            window.location.href = "index.html";
+        }
     </script>
 </head>
 
@@ -87,7 +91,7 @@
 
         <div class="row align-items-center mt-5">
             <article class="col-6">
-                <button type="button" class="btn btn-danger btn-lg" onclick="volver()">Atras</button>
+                <button type="button" class="btn btn-danger btn-lg" onclick="volver()">Volver</button>
             </article>
             <article class="col-6 text-end">
                 <button id="reservarButton" class="btn btn-success btn-lg" onclick="confirmarReserva(selected_hora, selected_dia)">Reservar</button>
