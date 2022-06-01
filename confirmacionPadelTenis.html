@@ -26,6 +26,10 @@
             $("#navbar").load("navbar.html");
             $("#footer").load("footer.html");
         });
+
+        function volver() {
+            window.location.href = "index.html";
+        }
     </script>
 </head>
 
@@ -34,7 +38,7 @@
     <div id="navbar"></div>
     <!--NAVBAR-->
     <!--CONTENT-->
-    <div class="container-lg mt-5">
+    <div class="container-lg mt-5 text-center">
         <h2 id="h1_id" class="display-1"></h2>
         <script type="text/javascript">
             const queryString = window.location.search;
@@ -45,6 +49,8 @@
             const dep = urlParams.get('dep');
             document.getElementById('h1_id').innerHTML = '<h2 id="h1_id" class="display-1 text-center">Reserva ' + dep + ' </br>Pista ' + pista + '</br>' + dia + " " + hora + "</br>realizada con &eacute;xito</h2>";
         </script>
+
+        <button id="confirmarButtom" type="submit" class="btn btn-success btn-lg" onclick="volver()" style="margin: auto;">Aceptar</button>
     </div>
     <!--CONTENT-->
 
