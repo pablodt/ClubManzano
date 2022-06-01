@@ -35,39 +35,16 @@
     <!--NAVBAR-->
     <!--CONTENT-->
     <div class="container-lg mt-5">
-        <h2 class="display-1">Reserva de instalaciones</h2>
-        <div class="row align-items-center mt-5">
-            <div class="col text-center">
-                <img src="img/piscina.jpg" class="img" alt="piscina" width="250" height="250">
-                <div class="middle">
-                    <a href="reservarPiscina.html" class="text text-decoration-none">Reservar</a>
-                </div>
-                <h3 class="elements">Piscina</h3>
-            </div>
-            <div class="col text-center">
-                <img src="img/gimnasio.png" class="img" alt="gimnasio" width="250" height="250">
-                <div class="middle">
-                    <div class="middle">
-                        <a href="actividadesGimnasio.html" class="text text-decoration-none">Reservar</a>
-                    </div>
-                </div>
-                <h3 class="elements">Gimnasio</h3>
-            </div>
-            <div class="col text-center">
-                <img src="img/tenis.png" class="img" alt="tenis" width="250" height="250">
-                <div class="middle">
-                    <a href="/reservaTenis.html" class="text text-decoration-none">Reservar</a>
-                </div>
-                <h3 class="elements">Tenis</h3>
-            </div>
-            <div class="col text-center">
-                <img src="img/padel.png" class="img" alt="padel" width="250" height="250">
-                <div class="middle">
-                    <a href="/reservaPadel.html" class="text text-decoration-none">Reservar</a>
-                </div>
-                <h3 class="elements">P&aacute;del</h3>
-            </div>
-        </div>
+        <h2 id="h1_id" class="display-1"></h2>
+        <script type="text/javascript">
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const hora = urlParams.get('hora');
+            const dia = urlParams.get('dia');
+            const pista = urlParams.get('pista');
+            const dep = urlParams.get('dep');
+            document.getElementById('h1_id').innerHTML = '<h2 id="h1_id" class="display-1 text-center">Reserva ' + dep + ' </br>Pista ' + pista + '</br>' + dia + " " + hora + "</br>realizada con &eacute;xito</h2>";
+        </script>
     </div>
     <!--CONTENT-->
 
