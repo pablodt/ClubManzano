@@ -28,9 +28,28 @@ h2 {
     margin-bottom: 30px;
 }
 
+.ejem {
+    background-color: #ffffff;
+}
+
 .boton-fecha {
     width: 120px;
     height: 50px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #313131;
+
+}
+
+.margin-buttom {
+    margin-bottom: 10px;
+}
+
+.boton-fecha:hover {
+    background: #4e4e4e;
 }
 
 .boton-fecha.active {
