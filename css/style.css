@@ -268,3 +268,42 @@ h2 {
 .exito {
     color: rgb(2, 161, 24);
 }
+
+.buttonCancelar {
+    background-color: #FF0000;
+    border: none;
+    color: #FFFFFF;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 50px;
+    width: 250px;
+}
+
+.texto-filtros {
+    color: #313131;
+    font-size: 30px;
+}
+
+.texto-filtro {
+    color: #000000;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.texto-reserva {
+    color: #313131;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.tableF {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 30px 0;
+    border-radius: 10px;
+}
