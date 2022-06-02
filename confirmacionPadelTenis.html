@@ -39,7 +39,7 @@
     <!--NAVBAR-->
     <!--CONTENT-->
     <div class="container-lg mt-5 text-center">
-        <h2 id="h1_id" class="display-1"></h2>
+        <h3 id="h1_id" class="display-1"></h3>
         <script type="text/javascript">
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
@@ -47,10 +47,11 @@
             const dia = urlParams.get('dia');
             const pista = urlParams.get('pista');
             const dep = urlParams.get('dep');
-            document.getElementById('h1_id').innerHTML = '<h2 id="h1_id" class="display-1 text-center">Reserva ' + dep + ' </br>Pista ' + pista + '</br>' + dia + " " + hora + "</br>realizada con &eacute;xito</h2>";
+            document.getElementById('h1_id').innerHTML = '<h3 id="h1_id" class="display-1 text-center">Reserva ' + dep + ' </br>Pista ' + pista + '</br>' + dia + " " + hora + "</br>realizada con &eacute;xito</h3>";
         </script>
 
-        <button id="confirmarButtom" type="submit" class="btn btn-success btn-lg" onclick="volver()" style="margin: auto;">Aceptar</button>
+        <button id="confirmarButtom" type="submit" class="btn btn-success btn-lg" onclick="volver()"
+            style="margin: auto;">Aceptar</button>
     </div>
     <!--CONTENT-->
 

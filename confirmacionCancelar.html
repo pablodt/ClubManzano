@@ -28,7 +28,7 @@
         });
 
         function volver() {
-            window.location.href = "misReservas.html";
+            window.location.href = "misReservas.html?indice=-1";
         }
 
     </script>
@@ -45,9 +45,10 @@
                 <span id="h1_id" class="display-1"></span>?
             </p>
         </div>
-            <button id="volverButtom" type="button" class="btn btn-success btn-lg" onclick="volver()">Atras</button>
-            <button id="aceptarButtom" type="button" class="btn btn-danger btn-lg" onclick="pasarParametros(actividad,hora, dia,indice)">Aceptar</button>
-        
+        <button id="volverButtom" type="button" class="btn btn-danger btn-lg" onclick="volver()">Atras</button>
+        <button id="aceptarButtom" type="button" class="btn btn-success btn-lg"
+            onclick="pasarParametros(actividad,hora, dia,indice)">Aceptar</button>
+
     </div>
 
     <!--CONTENT-->
@@ -67,18 +68,18 @@
         const dia = urlParams.get('dia');
         const fecha = dia + " a las " + hora;
         document.getElementById('h1_id').innerHTML = fecha;
-        
+
         const actividad = urlParams.get('actividad');
         document.getElementById('span-actividad').innerHTML = actividad;
 
         const indice = urlParams.get('indice');
     </script>
 
-<script type="text/javascript">
-    function pasarParametros(evento,hora,dia,indice) {
-        window.location.href = "cancelacionConfirmada.html?actividad=" + evento + "&hora=" + hora + "&dia=" + dia + "&indice=" + indice;
-    }
-</script>
+    <script type="text/javascript">
+        function pasarParametros(evento, hora, dia, indice) {
+            window.location.href = "cancelacionConfirmada.html?actividad=" + evento + "&hora=" + hora + "&dia=" + dia + "&indice=" + indice;
+        }
+    </script>
 
 </body>
 

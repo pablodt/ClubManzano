@@ -42,14 +42,14 @@
             document.getElementById(reserva).classList.remove('d-none');
 
         }
-        function cambiarReserva(reserva,checkbutton) {
+        function cambiarReserva(reserva, checkbutton) {
             var checked = $('#' + checkbutton).is(":checked");
-            if(checked == 1){
+            if (checked == 1) {
                 document.getElementById(reserva).classList.remove('d-none');
-            }else{
+            } else {
                 document.getElementById(reserva).classList.add('d-none');
             }
-            
+
         }
     </script>
 </head>
@@ -69,13 +69,13 @@
         <article class="col-3">
             <div class="date-picker" style="margin-top: 70px;">
                 <div class="selected-date"></div>
-                <div class="dates">
+                <div class="dates active">
                     <div class="month">
                         <div class="arrows prev-mth">&lt;</div>
                         <div class="mth"></div>
                         <div class="arrows next-mth">&gt;</div>
                     </div>
-                    
+
                     <div class="days"></div>
                 </div>
             </div>
@@ -84,31 +84,46 @@
 
         <article class="col-2">
             <div class="col text-center">
-                <table  class="tableF">
-                    <tr><td><div class="texto-filtro text-center">FILTROS</td></tr>
+                <table class="tableF">
                     <tr>
-                        <td class="table"><div class="texto-filtros text-center">Piscina</div></td>
-                        <td class="table"><input id="cbPiscina" type="checkbox" checked="true" onclick="cambiarReserva('Piscina10:00','cbPiscina')"></td>
+                        <td>
+                            <div class="texto-filtro text-center">FILTROS
+                        </td>
                     </tr>
                     <tr>
-                        <td class="table"><div class="texto-filtros text-center">Sala musculacion</div></td>
-                        <td><input id="cbGym" type="checkbox" checked="true" onclick="cambiarReserva('Sala musculacion17:00','cbGym')"></td>
+                        <td class="table">
+                            <div class="texto-filtros text-center">Piscina</div>
+                        </td>
+                        <td class="table"><input id="cbPiscina" type="checkbox" checked="true"
+                                onclick="cambiarReserva('Piscina10:00','cbPiscina')"></td>
                     </tr>
                     <tr>
-                        <td class="table"><div class="texto-filtros text-center">Padel</div></td>
-                        <td><input id="cbPadel" type="checkbox" checked="true" ></td>
+                        <td class="table">
+                            <div class="texto-filtros text-center">Sala musculacion</div>
+                        </td>
+                        <td><input id="cbGym" type="checkbox" checked="true"
+                                onclick="cambiarReserva('Sala musculacion17:00','cbGym')"></td>
                     </tr>
                     <tr>
-                        <td class="table"><div class="texto-filtros text-center">Actividades</div></td>
-                        <td><input id="cbActividades" type="checkbox" checked="true" onclick="cambiarReserva('Yoga19:00','cbActividades')"></td>
-                        
+                        <td class="table">
+                            <div class="texto-filtros text-center">Padel</div>
+                        </td>
+                        <td><input id="cbPadel" type="checkbox" checked="true"></td>
+                    </tr>
+                    <tr>
+                        <td class="table">
+                            <div class="texto-filtros text-center">Actividades</div>
+                        </td>
+                        <td><input id="cbActividades" type="checkbox" checked="true"
+                                onclick="cambiarReserva('Yoga19:00','cbActividades')"></td>
+
                     </tr>
                 </table>
             </div>
         </article>
 
         <article class="col-1"></article>
-        
+
         <article class="col-6">
             <div class="texto_dia_seleccionado text-center">
                 <script> document.write(document.querySelector('.date-picker .selected-date').textContent)</script>
@@ -155,7 +170,8 @@
                         </td>
                         <td>
                             <button id="boton-cancelar" type="button" class="buttonCancelar"
-                            onclick="pasarParametros('Sala musculacion','17:00',selectedDay + ' ' + mth_element.textContent,1)">Cancelar Reserva</button>
+                                onclick="pasarParametros('Sala musculacion','17:00',selectedDay + ' ' + mth_element.textContent,1)">Cancelar
+                                Reserva</button>
                         </td>
                     </tr>
                     <tr id="Yoga19:00">
@@ -172,17 +188,18 @@
                         <td>
                             <div class="texto-reserva text-center">
                                 19:00
-                            </div>               
+                            </div>
                         </td>
                         <td>
                             <button id="boton-cancelar" type="button" class="buttonCancelar"
-                            onclick="pasarParametros('Yoga','19:00',selectedDay + ' ' + mth_element.textContent,2)">Cancelar Reserva</button>
+                                onclick="pasarParametros('Yoga','19:00',selectedDay + ' ' + mth_element.textContent,2)">Cancelar
+                                Reserva</button>
                         </td>
                     </tr>
                 </table>
             </div>
         </article>
-    </div> 
+    </div>
     <!--CONTENT-->
 
     <!--FOOTER-->
@@ -193,22 +210,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
-        <script type="text/javascript">
-            function pasarParametros(evento,hora,dia,indice) {
-                window.location.href = "confirmacionCancelar.html?actividad=" + evento + "&hora=" + hora + "&dia=" + dia + "&indice=" + indice;
-            }
-        </script>
+    <script type="text/javascript">
+        function pasarParametros(evento, hora, dia, indice) {
+            window.location.href = "confirmacionCancelar.html?actividad=" + evento + "&hora=" + hora + "&dia=" + dia + "&indice=" + indice;
+        }
+    </script>
 
-<script type="text/javascript">
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const indiceFila = urlParams.get('indice');
-    if(indiceFila >= 0){
-        eliminarReserva(indiceFila);
-    }
-    console.log(indiceFila)
-    
-</script>
+    <script type="text/javascript">
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const indiceFila = urlParams.get('indice');
+        if (indiceFila >= 0) {
+            eliminarReserva(indiceFila);
+        }
+        console.log(indiceFila)
+
+    </script>
 
 </body>
 
