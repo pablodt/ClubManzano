@@ -23,6 +23,12 @@ h2 {
     font-size: 50px;
 }
 
+h1 {
+    font-family: 'Josefin-Slab', serif;
+    color: #17B914;
+    font-size: 50px;
+}
+
 .texto_dia_seleccionado {
     color: #313131;
     font-size: 40px;
