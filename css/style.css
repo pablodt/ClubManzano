@@ -349,7 +349,7 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 5px;
+    border-radius: 3px;
     display: block;
 }
 
@@ -367,7 +367,7 @@ h1 {
 }
 
 .popup_conf svg {
-    font-size: 60px;
+    font-size: 20px;
     color: #10805a;
     border: 5px solid #10805a;
     padding: 20px 40px;
