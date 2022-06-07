@@ -45,16 +45,17 @@ h1 {
     justify-content: center;
     align-items: center;
     color: #313131;
+    font-size: 20px;
     margin-left: 30px;
 
 }
 
 .boton-fecha:hover {
-    background: #cecece;
+    background: #eae9e9;
 }
 
 .boton-fecha.selected {
-    background: #a69c9c;
+    background: #c2c2c2;
 }
 
 .margin-buttom {
