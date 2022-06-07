@@ -3,12 +3,12 @@ const time_element1 = document.querySelector('#col1');
 const time_element2 = document.querySelector('#col2');
 const time_element3 = document.querySelector('#col3');
 
-let buttom_hour = -1;
-let selected_hora;
+//random
+var random1 = Math.floor(Math.random() * (11 - 0 + 1) + 0);
+var random2 = Math.floor(Math.random() * (11 - 0 + 1) + 0);
+var random3 = Math.floor(Math.random() * (11 - 0 + 1) + 0);
 
-listarBotones();
-
-function listarBotones(e) {
+function listarBotones(indice) {
     time_element1.innerHTML = '';
     time_element2.innerHTML = '';
     time_element3.innerHTML = '';
@@ -18,7 +18,7 @@ function listarBotones(e) {
         const hour_element = document.createElement('buttom');
         hour_element.classList.add('boton-fecha');
 
-        if (i == 3 || i == 5 || i == 10) {
+        if ((i == random1 || i == random2 || i == random3)) {
             hour_element.classList.add('disabled');
             hour_element.setAttribute('disabled', true);
         }
@@ -26,19 +26,21 @@ function listarBotones(e) {
         hour_element.textContent = i + 9 + ":00";
 
 
-        if (buttom_hour == i) {
+        if (indice == i) {
             hour_element.classList.add('selected');
         }
 
         hour_element.addEventListener('click', function () {
             if (hour_element.getAttribute('disabled') != "true") {
-                if (buttom_hour == i) {
-                    buttom_hour = -1;
+                if (indice == i) {
+                    indice = -1;
+                    seleccionado = false;
                 } else {
-                    buttom_hour = i;
+                    seleccionado = true;
+                    indice = i;
                 }
-                cambiarHora(buttom_hour);
-                listarBotones();
+                cambiarHora(indice);
+                listarBotones(indice);
             }
         });
 
@@ -52,6 +54,12 @@ function listarBotones(e) {
 
     }
 
+}
+
+function calcularRandom() {
+    random1 = Math.floor(Math.random() * (11 - 0 + 1) + 0);
+    random2 = Math.floor(Math.random() * (11 - 0 + 1) + 0);
+    random3 = Math.floor(Math.random() * (11 - 0 + 1) + 0);
 }
 
 function cambiarHora(hora) {

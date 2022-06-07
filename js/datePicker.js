@@ -27,6 +27,11 @@ selected_date_element.dataset.value = selectedDate;
 
 populateDates();
 
+$.getScript("js/buttom.js", function () {
+    listarBotones(-1);
+    cambiarHora(-1);
+});
+
 // EVENT LISTENERS
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
@@ -87,10 +92,11 @@ function populateDates(e) {
             selected_date_element.dataset.value = selectedDate;
 
             $.getScript("js/buttom.js", function () {
-                listarBotones();
+                calcularRandom();
+                listarBotones(-1);
+                cambiarHora(-1);
             });
 
-            listarBotones();
             populateDates();
             let doc = document.querySelector('.texto_dia_seleccionado');
             if (doc != null) {

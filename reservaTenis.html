@@ -71,47 +71,21 @@
                 </div>
                 <script src="js/datePicker.js"></script>
             </div>
-            <div class="col">
-                <div class="texto-dia-seleccionado text-center">
-                    <script>
-                        let selected_fecha;
-                        selected_fecha = document.querySelector('.date-picker .selected-date').textContent;
-
-                        document.write(selected_fecha);
-                    </script>
+            <div class="col table">
+                <div class="texto_dia_seleccionado text-center">
+                    <script> document.write(document.querySelector('.date-picker .selected-date').textContent)</script>
                 </div>
                 <div class="row">
-                    <article class="col-4 text-center">
+                    <article id="col1" class="col-4 text-center">
                         </br>
-                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                            onclick="cambiarHora('9:00')">9:00</button></br></br>
-                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                            onclick="cambiarHora('10:30')">10:30</button></br></br>
-                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                            onclick="cambiarHora('12:00')">12:00</button></br></br>
-                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                            onclick="cambiarHora('13:30')">13:30</button>
                     </article>
-                    <article class="col-4 text-center">
+                    <article id="col2" class="col-4 text-center">
                         </br>
-                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                            onclick="cambiarHora('15:00')">15:00</button></br></br>
-                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                            onclick="cambiarHora('16:30')">16:30</button></br></br>
-                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                            onclick="cambiarHora('18:00')">18:00</button></br></br>
-                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                            onclick="cambiarHora('19:30')">19:30</button></br></br>
                     </article>
-                    <article class="col-4 text-center">
+                    <article id="col3" class="col-4 text-center">
                         </br>
-                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                            onclick="cambiarHora('21:00')">21:00</button></br></br>
-                        <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                            onclick="cambiarHora('22:30')">22:30</button></br></br>
                     </article>
                 </div>
-
             </div>
 
             <div class="row mt-5" id="pistas">
