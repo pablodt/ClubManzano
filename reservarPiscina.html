@@ -25,7 +25,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        let selected_hora;
 
         $(document).ready(function () {
             $("#navbar").load("navbar.html");
@@ -36,13 +35,6 @@
             window.location.href = "index.html";
         }
 
-        function cambiarHora(hora) {
-            if (selected_hora == hora) {
-                selected_hora = undefined;
-            } else {
-                selected_hora = hora;
-            }
-        }
     </script>
 </head>
 
@@ -81,56 +73,21 @@
                 <script src="js/datePicker.js"></script>
             </div>
             <div class="col">
-                <table class="table center">
-                    <tr>
-                        <td>
-                            <div class="texto_dia_seleccionado text-center">
-                                <script> document.write(document.querySelector('.date-picker .selected-date').textContent)</script>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <article class="col-4 text-center">
-                                    </br>
-                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                                        onclick="cambiarHora('9:00')">9:00</button></br></br>
-                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                                        onclick="cambiarHora('10:00')">10:00</button></br></br>
-                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                                        onclick="cambiarHora('11:00')">11:00</button></br></br>
-                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                                        onclick="cambiarHora('12:00')">12:00</button>
-                                </article>
-                                <article class="col-4 text-center">
-                                    </br>
-                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                                        onclick="cambiarHora('13:00')">13:00</button></br></br>
-                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                                        onclick="cambiarHora('14:00')">14:00</button></br></br>
-                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                                        onclick="cambiarHora('15:00')">15:00</button></br></br>
-                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                                        onclick="cambiarHora('16:00')">16:00</button></br></br>
-                                </article>
-                                <article class="col-4 text-center">
-                                    </br>
-                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                                        onclick="cambiarHora('17:00')">17:00</button></br></br>
-                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                                        onclick="cambiarHora('18:00')">18:00</button></br></br>
-                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                                        onclick="cambiarHora('19:00')">19:00</button></br></br>
-                                    <button id="boton-fecha" type="button" class="btn btn-outline-secondary"
-                                        onclick="cambiarHora('20:00')">20:00</button>
-                                </article>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-
-
+                <div class="texto_dia_seleccionado text-center">
+                    <script> document.write(document.querySelector('.date-picker .selected-date').textContent)</script>
+                </div>
+                <div class="ejem row">
+                    <article id="col1" class="col-4 text-center">
+                        </br>
+                    </article>
+                    <article id="col2" class="col-4 text-center">
+                        </br>
+                    </article>
+                    <article id="col3" class="col-4 text-center">
+                        </br>
+                    </article>
+                </div>
+                <script src="js/buttom.js"></script>
             </div>
             <div class="row align-items-center mt-5">
                 <article class="col-6">

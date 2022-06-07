@@ -35,10 +35,32 @@ h1 {
     margin-bottom: 30px;
 }
 
-#boton-fecha {
+
+.boton-fecha {
     width: 120px;
     height: 50px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #313131;
+    margin-left: 30px;
+
 }
+
+.boton-fecha:hover {
+    background: #cecece;
+}
+
+.boton-fecha.selected {
+    background: #a69c9c;
+}
+
+.margin-buttom {
+    margin-bottom: 10px;
+}
+
 
 .buttonReserva {
     background-color: #C4C4C4;
