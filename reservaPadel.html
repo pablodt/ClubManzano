@@ -98,11 +98,12 @@
             <div class="row mt-5" id="pistas">
                 <div id="pista1" class="btn btn-outline-secondary w-25 m-3 col" onclick="cambiarPista('1')">Pista 1
                 </div></br></br>
-                <button id="pista2" class="btn btn-outline-secondary w-25 m-3 col" onclick="cambiarPista('2')">Pista
-                    2</button></br></br>
-                <button id="pista3" class="btn btn-outline-secondary w-25 m-3 col" onclick="cambiarPista('3')">Pista
-                    3</button></br></br>
+                <div id="pista2" class="btn btn-outline-secondary w-25 m-3 col" onclick="cambiarPista('2')">Pista
+                    2</div></br></br>
+                <div id="pista3" class="btn btn-outline-secondary w-25 m-3 col" onclick="cambiarPista('3')">Pista
+                    3</div></br></br>
             </div>
+            <script src="js/pistas.js"></script>
 
             <div class="row align-items-center mt-5">
                 <article class="col-6">
@@ -126,16 +127,11 @@
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
     <script type="text/javascript">
-        function cambiarPista(pista) {
-            selected_pista = pista;
-            console.log(selected_pista);
-        }
-
         function pasarParametros(hora, dia, pista) {
             if (hora != undefined) {
                 //window.location.href = "confirmacion.html?hora=" + hora + "&actividad=Piscina&dia=" + dia;
                 $.getScript("js/popup_conf.js", function () {
-                    pop_upConf(hora, dia, pista, "1");
+                    pop_upConf(hora, dia, pista, "1", "1", "");
                 });
             } else {
                 $.getScript("js/popup.js", function () {
