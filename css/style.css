@@ -403,3 +403,8 @@ h1 {
     background: #10805a;
     cursor: pointer;
 }
+
+input.larger {
+    width: 50px;
+    height: 50px;
+  }
