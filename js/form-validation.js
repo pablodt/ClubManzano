@@ -8,6 +8,7 @@
   // Loop over them and prevent submission
   Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
+      
       if (!form.checkValidity()) {
         event.preventDefault();
         event.stopPropagation();
@@ -16,4 +17,16 @@
       form.classList.add('was-validated')
     }, false);
   })
-})() 
+})()
+
+
+function pop_upConf() {
+
+  $(document).ready(function () {
+      $('.popup_conf').css("display", "block");
+  });
+  $('.btn2').click(function () {
+      $('.popup_conf').css("display", "none");
+      window.location.href = "/";
+  });
+}
