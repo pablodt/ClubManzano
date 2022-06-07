@@ -41,20 +41,22 @@ h2 {
     justify-content: center;
     align-items: center;
     color: #313131;
+    margin-left: 30px;
 
+}
+
+.boton-fecha:hover {
+    background: #cecece;
+}
+
+.boton-fecha.selected {
+    background: #a69c9c;
 }
 
 .margin-buttom {
     margin-bottom: 10px;
 }
 
-.boton-fecha:hover {
-    background: #4e4e4e;
-}
-
-.boton-fecha.active {
-    background: #04AA6D;
-}
 
 .buttonReserva {
     background-color: #C4C4C4;
