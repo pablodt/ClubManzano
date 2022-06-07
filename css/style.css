@@ -47,7 +47,14 @@ h1 {
     color: #313131;
     font-size: 20px;
     margin-left: 30px;
+    margin-bottom: 20px;
+}
 
+.boton-fecha.disabled {
+    border: 1px solid rgb(255, 0, 0);
+    color: #ff0000;
+    text-decoration: line-through;
+    display: flex;
 }
 
 .boton-fecha:hover {
@@ -55,7 +62,7 @@ h1 {
 }
 
 .boton-fecha.selected {
-    background: #c2c2c2;
+    background: #a5c9ea;
 }
 
 .margin-buttom {

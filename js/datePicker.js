@@ -18,6 +18,7 @@ let selectedDay = day;
 let selectedMonth = month;
 let selectedYear = year;
 
+
 mth_element.textContent = months[month] + ' ' + year;
 
 
@@ -84,6 +85,12 @@ function populateDates(e) {
 
             selected_date_element.textContent = formatDate(selectedDate);
             selected_date_element.dataset.value = selectedDate;
+
+            $.getScript("js/buttom.js", function () {
+                listarBotones();
+            });
+
+            listarBotones();
             populateDates();
             let doc = document.querySelector('.texto_dia_seleccionado');
             if (doc != null) {
