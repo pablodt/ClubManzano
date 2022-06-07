@@ -135,7 +135,7 @@
             if (hora != undefined) {
                 //window.location.href = "confirmacion.html?hora=" + hora + "&actividad=Piscina&dia=" + dia;
                 $.getScript("js/popup_conf.js", function () {
-                    pop_upConf(hora, dia, pista);
+                    pop_upConf(hora, dia, pista, "1");
                 });
             } else {
                 $.getScript("js/popup.js", function () {
