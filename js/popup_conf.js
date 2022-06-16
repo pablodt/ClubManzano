@@ -20,3 +20,18 @@ function pop_upConf(hora, dia, pista, val, val2, texto) {
         window.location.href = "index.html";
     });
 }
+
+
+function pop_upConf(hora, dia) {
+
+    $(document).ready(function () {
+            $('.popup_conf').css("display", "block");
+            $('.fecha_hora_reserva').text(dia + " a las " + hora);
+    });
+    $('.btn2').click(function () {
+        $('.popup_conf').css("display", "none");
+        window.location.href = "index.html";
+    });
+}
+
+
