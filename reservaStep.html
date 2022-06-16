@@ -83,71 +83,32 @@
             <script src="js/popup.js"></script>
             <!-- Pop-up -->
 
-            <div id="tables">
-                <table class="bigtable" width="100%">
-                    <td width="33%">
-                        <table class="table center">
-                            <tr>
-                                <th>
-                                    <h3 class="elements">Martes 26/04</h3>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td style="padding: 20px">
-                                    <button class="btn btn-outline-secondary sizeStyle" value="11:00"
-                                        onclick="changeValue('11:00', 'Martes 26/04')"
-                                        disabled><s>11:00</s></button></br></br>
-                                    <button class="btn btn-outline-secondary sizeStyle" value="18:00"
-                                        onclick="changeValue('18:00', 'Martes 26/04')">18:00</button></br>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td width="34%">
-                        <table class="table center">
-                            <tr>
-                                <th>
-                                    <h3 class="elements">Jueves 28/04</h3>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td style="padding: 20px">
-                                    <button class="btn btn-outline-secondary sizeStyle" value="11:00"
-                                        onclick="changeValue('11:00', 'Jueves 28/04')"">11:00</button></br></br>
-                                    <button class=" btn btn-outline-secondary sizeStyle" value="18:00"
-                                        onclick="changeValue('18:00', 'Jueves 28/04')">18:00</button></br>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td width="33%">
-                        <table class="table center">
-                            <tr>
-                                <th>
-                                    <h3 class="elements">Viernes 29/04</h3>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td style="padding: 20px">
-                                    <button class="btn btn-outline-secondary sizeStyle" value="12:00"
-                                        onclick="changeValue('12:00', 'Viernes 29/04')">12:00</button></br></br>
-                                    <button class="btn btn-outline-secondary sizeStyle" value="19:00"
-                                        onclick="changeValue('19:00', 'Viernes 29/04')">19:00</button></br>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </table>
-            </div>
+            <div class="row mt-5">
+                <div class="col table mx-3 text-center">
+                    <div class="texto_dia_seleccionado">Jueves 16 de Junio</div>
+                    <article id="col1" style="margin-left: 80px;"></article>
+                </div>
+                <div class="col table mx-3 text-center">
+                    <div class="texto_dia_seleccionado text-center">Viernes 17 de Junio</div>
+                    <article id="col2" style="margin-left: 80px;">
+                    </article>
+                </div>
+                <div class="col table mx-3 text-center">
+                    <div class="texto_dia_seleccionado text-center">Sabado 18 de Junio</div>
+                    <article id="col3" style="margin-left: 80px;">
+                    </article>
+                </div>
+                <script src="js/buttom-actividades.js"></script>
 
-            <div class="row align-items-center mt-5">
-                <article class="col-6">
-                    <button type="button" class="btn btn-danger btn-lg" onclick="volver()">Atras</button>
-                </article>
-                <article class="col-6 text-end">
-                    <button id="reservarButton" class="btn btn-success btn-lg"
-                        onclick="confirmarReserva(selected_hora, selected_dia)">Reservar</button>
-                </article>
+                <div class="row align-items-center mt-5">
+                    <article class="col-6">
+                        <button type="button" class="btn btn-danger btn-lg" onclick="volver()">Atras</button>
+                    </article>
+                    <article class="col-6 text-end">
+                        <button id="reservarButton" class="btn btn-success btn-lg"
+                            onclick="confirmarReserva(selected_hora, selected_dia)">Reservar</button>
+                    </article>
+                </div>
             </div>
         </div>
     </div>
