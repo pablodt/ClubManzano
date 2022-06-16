@@ -121,7 +121,9 @@
         <script type="text/javascript">
             function confirmarReserva(hora, dia) {
                 if (hora != undefined) {
-                    window.location.href = "confirmacion.html?hora=" + hora + "&actividad=Spinning&dia=" + dia;
+                    $.getScript("js/popup_conf.js", function () {
+                    pop_upConf(hora, dia);
+                });
                 } else {
                     $.getScript("js/popup.js", function () {
                         pop_up();
@@ -129,6 +131,22 @@
                 }
             }
         </script>
+
+        <!-- Pop-up CONFIRMACION -->
+    <div class="popup_conf">
+        <i class="fas fa-check"></i>
+        <h1>Reserva realizada</h1>
+        <label>
+            <label class="fecha_hora_reserva"></label>
+            <br />
+            <label class="pista_reserva"></label>
+        </label>
+        <div class="btns">
+            <a class="btn2">Aceptar</a>
+        </div>
+    </div>
+    <script src="js/popup_conf.js"></script>
+    <!-- Pop-up -->
 </body>
 
 </html>
