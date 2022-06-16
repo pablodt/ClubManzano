@@ -9,6 +9,7 @@ var random2 = Math.floor(Math.random() * (11 - 0 + 1) + 0);
 var random3 = Math.floor(Math.random() * (11 - 0 + 1) + 0);
 
 listarBotones(-1);
+
 function listarBotones(indice) {
     time_element1.innerHTML = '';
     time_element2.innerHTML = '';
@@ -52,7 +53,6 @@ function listarBotones(indice) {
         } else {
             time_element3.appendChild(hour_element);
         }
-
     }
 
 }
@@ -64,9 +64,18 @@ function calcularRandom() {
 }
 
 function cambiarHora(hora) {
+    console.log(hora);
     if (hora == -1) {
         selected_hora = undefined;
+        selected_dia = undefined;
     } else {
         selected_hora = hora + 9 + ":00";
+        if (hora == 0 || hora == 1) {
+            selected_dia = "Jueves 16";
+        } else if (hora == 2 || hora == 3) {
+            selected_dia = "Viernes 17";
+        } else {
+            selected_dia = "Sabado 18";
+        }
     }
 }

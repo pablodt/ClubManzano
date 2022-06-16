@@ -28,29 +28,12 @@
             $("#footer").load("footer.html");
         });
 
-
-
-        let selected_hora;
-        let selected_dia;
-        function changeValue(hora, dia) {
-            if (selected_hora == hora) {
-                selected_hora = undefined;
-            } else {
-                selected_hora = hora;
-            }
-
-            if (selected_dia == dia) {
-                selected_dia = undefined;
-            } else {
-                selected_dia = dia;
-            }
-        }
-
         function volver() {
             window.location.href = "actividadesGimnasio.html";
         }
 
-
+        let selected_dia;
+        let selected_hora;
     </script>
 
     <script>
@@ -122,8 +105,8 @@
             function confirmarReserva(hora, dia) {
                 if (hora != undefined) {
                     $.getScript("js/popup_conf.js", function () {
-                    pop_upConf(hora, dia);
-                });
+                        pop_upConf(hora, dia);
+                    });
                 } else {
                     $.getScript("js/popup.js", function () {
                         pop_up();
@@ -133,20 +116,20 @@
         </script>
 
         <!-- Pop-up CONFIRMACION -->
-    <div class="popup_conf">
-        <i class="fas fa-check"></i>
-        <h1>Reserva realizada</h1>
-        <label>
-            <label class="fecha_hora_reserva"></label>
-            <br />
-            <label class="pista_reserva"></label>
-        </label>
-        <div class="btns">
-            <a class="btn2">Aceptar</a>
+        <div class="popup_conf">
+            <i class="fas fa-check"></i>
+            <h1>Reserva realizada</h1>
+            <label>
+                <label class="fecha_hora_reserva"></label>
+                <br />
+                <label class="pista_reserva"></label>
+            </label>
+            <div class="btns">
+                <a class="btn2">Aceptar</a>
+            </div>
         </div>
-    </div>
-    <script src="js/popup_conf.js"></script>
-    <!-- Pop-up -->
+        <script src="js/popup_conf.js"></script>
+        <!-- Pop-up -->
 
 </body>
 
