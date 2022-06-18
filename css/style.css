@@ -396,16 +396,17 @@ h1 {
     font-size: 18px;
     border-radius: 5px;
     border: 1px solid #808080;
-    padding: 10px 13px;
+    padding: 30px 30px;
 }
 
 .btns .btn3 {
     background: #dc3545;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     border-radius: 5px;
     border: 1px solid #808080;
-    padding: 10px 13px;
+    padding: 10px 30px;
+    
 }
 
 .btns .btn3:hover {
@@ -421,10 +422,10 @@ h1 {
 .btns .btn4 {
     background: #198754;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     border-radius: 5px;
     border: 1px solid #808080;
-    padding: 10px 13px;
+    padding: 10px 35px;
 }
 
 .btns .btn2:hover {
