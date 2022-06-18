@@ -1,23 +1,34 @@
-const pista1 = document.querySelector('#pista1');
-const pista2 = document.querySelector('#pista2');
-const pista3 = document.querySelector('#pista3');
-
-//random
-var random1 = getRandomArbitrary(1, 3);
-var random2 = getRandomArbitrary(1, 3);
-var random3 = getRandomArbitrary(1, 3);
-
+const pistas = document.getElementById('pistas');
 let selected_pista;
 
-let disponibleP1 = true;
-let disponibleP2 = true;
-let disponibleP3 = true;
+pistas.style.display = "none";
 
+// FUNCTIONS
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
 function listarPistas() {
+    let pista1 = document.querySelector('#pista1');
+    let pista2 = document.querySelector('#pista2');
+    let pista3 = document.querySelector('#pista3');
+
+    pistas.style.display = "inline-block";
+
+    //random
+    var random1 = getRandomArbitrary(1, 4);
+    var random2 = getRandomArbitrary(1, 4);
+    var random3 = getRandomArbitrary(1, 4);
+    var randomExtra = getRandomArbitrary(1, 4);
+
+    console.log(random1);
+    console.log(random2);
+    console.log(random3);
+
+    let disponibleP1 = true;
+    let disponibleP2 = true;
+    let disponibleP3 = true;
+
     pista1.innerHTML = '';
     pista2.innerHTML = '';
     pista3.innerHTML = '';
@@ -47,63 +58,33 @@ function listarPistas() {
         disponibleP3 = false;
     }
 
-    const pista1_element = document.createElement('button');
-    pista1_element.classList.add('btn btn-outline-secondary w-25 m-3 col');
-
-    const pista2_element = document.createElement('button');
-    pista2_element.classList.add('btn btn-outline-secondary w-25 m-3 col');
-
-    const pista3_element = document.createElement('button');
-    pista3_element.classList.add('btn btn-outline-secondary w-25 m-3 col');
-    
-    if (!disponibleP1) {
-        pista1_element.classList.add('disabled');
-        pista1_element.setAttribute('disabled', true);
+    if (!disponibleP1 && !disponibleP2 && !disponibleP3) {
+        if (randomExtra.toString() == "1") {
+            disponibleP1 = true;
+        } else if (randomExtra.toString() == "2") {
+            disponibleP2 = true;
+        } else if (randomExtra.toString() == "3") {
+            disponibleP3 = true;
+        }
     }
 
-    pista1_element.textContent("Pista 1");
-
-    pista1_element.addEventListener('click', function () {
-        if (pista1_element.getAttribute('disabled') != "true") {
-            cambiarPista("1");
-            //listarBotones(indice);
-        }
-    });
-
-    pista1.appendChild(pista1_element);
+    if (!disponibleP1) {
+        pista1.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" disabled>Pista 1</button>';
+    } else {
+        pista1.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" onclick="cambiarPista("1")">Pista 1</button>';
+    }
 
     if (!disponibleP2) {
-        pista2_element.classList.add('disabled');
-        pista2_element.setAttribute('disabled', true);
+        pista2.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" disabled>Pista 2</button>';
+    } else {
+        pista2.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" onclick="cambiarPista("2")">Pista 2</button>';
     }
-
-    pista2_element.textContent("Pista 2");
-
-    pista2_element.addEventListener('click', function () {
-        if (pista2_element.getAttribute('disabled') != "true") {
-            cambiarPista("2");
-            //listarBotones(indice);
-        }
-    });
-
-    pista2.appendChild(pista2_element);
 
     if (!disponibleP3) {
-        pista3_element.classList.add('disabled');
-        pista3_element.setAttribute('disabled', true);
+        pista3.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" disabled>Pista 3</button>';
+    } else {
+        pista3.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" onclick="cambiarPista("3")">Pista 3</button>';
     }
-
-    pista3_element.textContent("Pista 3");
-
-    pista3_element.addEventListener('click', function () {
-        if (pista3_element.getAttribute('disabled') != "true") {
-            cambiarPista("3");
-            //listarBotones(indice);
-        }
-    });
-
-    pista3.appendChild(pista3_element);
-
 }
 
 function calcularRandom() {
