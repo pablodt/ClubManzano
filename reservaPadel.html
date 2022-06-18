@@ -46,7 +46,7 @@
     <div class="popup_box">
         <i class="fas fa-exclamation"></i>
         <h1>Error</h1>
-        <label>¡Debe introducir una hora!</label>
+        <label>¡Debe introducir una hora y una pista!</label>
         <div class="btns">
             <a class="btn1">Volver</a>
         </div>
@@ -125,7 +125,7 @@
     <script type="text/javascript">
         function pasarParametros(hora, dia, pista) {
             console.log(hora + " " + dia + " " + pista);
-            if (hora != undefined) {
+            if (hora != undefined && pista != undefined) {
                 //window.location.href = "confirmacion.html?hora=" + hora + "&actividad=Piscina&dia=" + dia;
                 $.getScript("js/popup_conf.js", function () {
                     pop_upConfPista(hora, dia, pista);
