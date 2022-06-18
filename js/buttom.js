@@ -17,7 +17,7 @@ function listarBotones(indice) {
     for (let i = 0; i < amount_hour; i++) {
         const hour_element = document.createElement('buttom');
         hour_element.classList.add('boton-fecha');
-
+        hour_element.setAttribute('tabindex',0);
         if ((i == random1 || i == random2 || i == random3)) {
             hour_element.classList.add('disabled');
             hour_element.setAttribute('disabled', true);

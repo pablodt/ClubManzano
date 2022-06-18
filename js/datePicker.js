@@ -24,7 +24,7 @@ mth_element.textContent = months[month] + ' ' + year;
 
 selected_date_element.textContent = formatDate(date);
 selected_date_element.dataset.value = selectedDate;
-
+selected_date_element.setAttribute('tabindex',0);
 populateDates();
 
 $.getScript("js/buttom.js", function () {
@@ -36,7 +36,8 @@ $.getScript("js/buttom.js", function () {
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
 prev_mth_element.addEventListener('click', goToPrevMonth);
-
+next_mth_element.setAttribute('tabindex',0);
+prev_mth_element.setAttribute('tabindex',0);
 // FUNCTIONS
 function toggleDatePicker(event) {
     if (!checkEventPathForClass(event.path || (event.composedPath && event.composedPath()), 'dates')) {
@@ -77,7 +78,7 @@ function populateDates(e) {
         const day_element = document.createElement('div');
         day_element.classList.add('day');
         day_element.textContent = i + 1;
-
+        day_element.setAttribute('tabindex',0);
         if (selectedDay == (i + 1) && selectedYear == year && selectedMonth == month) {
             day_element.classList.add('selected');
         }
