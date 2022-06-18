@@ -65,9 +65,8 @@
         <h1 style="font-size:3vw">Mis reservas</h1>
     </div>
 
-    <div class="row align-items-center mx-1">
-        <article class="col-3">
-            <div class="date-picker" style="margin-top: 70px;">
+    <div class="row align-items-center mt-4 mx-4">
+            <div class="date-picker mx-3" style="margin-left: 70px; margin-top: 70px;">
                 <div class="selected-date"></div>
                 <div class="dates active">
                     <div class="month">
@@ -80,39 +79,37 @@
                 </div>
             </div>
             <script src="js/datePicker.js"></script>
-        </article>
 
-        <article class="col-2">
-            <div class="col text-center">
-                <table class="tableF">
+            <div class="col text-center mx-3" style="max-width: 300px;">
+                <table class="table">
                     <tr>
-                        <td>
-                            <div class="texto-filtro text-center">FILTROS
+                        <td colspan="2">
+                            <div class="texto-filtro text-center">FILTROS</div>
                         </td>
                     </tr>
                     <tr>
-                        <td class="table">
+                        <td>
                             <div class="texto-filtros text-center">Piscina</div>
                         </td>
-                        <td class="table"><input id="cbPiscina" type="checkbox" class="larger" checked="true"
+                        <td><input id="cbPiscina" type="checkbox" class="larger" checked="true"
                                 onclick="cambiarReserva('Piscina10:00','cbPiscina')"></td>
                     </tr>
                     <tr>
-                        <td class="table">
-                            <div class="texto-filtros text-center">Sala musculacion</div>
+                        <td>
+                            <div class="texto-filtros text-center">Gimnasio</div>
                         </td>
                         <td><input id="cbGym" type="checkbox" class="larger" checked="true"
                                 onclick="cambiarReserva('Sala musculacion17:00','cbGym')"></td>
                     </tr>
                     <tr>
-                        <td class="table">
+                        <td>
                             <div class="texto-filtros text-center">Padel</div>
                         </td>
                         <td><input id="cbPadel" type="checkbox" class="larger" checked="true"></td>
                     </tr>
                     <tr>
-                        <td class="table">
-                            <div class="texto-filtros text-center">Actividades</div>
+                        <td>
+                            <div class="texto-filtros text-center">Otros</div>
                         </td>
                         <td><input id="cbActividades" type="checkbox" class="larger" checked="true"
                                 onclick="cambiarReserva('Yoga19:00','cbActividades')"></td>
@@ -120,30 +117,21 @@
                     </tr>
                 </table>
             </div>
-        </article>
 
-        <article class="col-1"></article>
 
-        <article class="col-6">
-            <div class="texto_dia_seleccionado text-center">
-                <script> document.write(document.querySelector('.date-picker .selected-date').textContent)</script>
-            </div>
-            <div class="col text-center">
-                <table id="reservas" class="tableF">
+            <div class="col text-center mx-3">
+                <table id="reservas" class="table">
+                    <tr>
+                        <td colspan="2">
+                            <div class="texto_dia_seleccionado text-center">
+                                <script> document.write(document.querySelector('.date-picker .selected-date').textContent)</script>
+                            </div>
+                        </td>
+                    </tr>
                     <tr id="Piscina10:00">
                         <td>
                             <div class="texto-reserva text-center">
-                                Piscina
-                            </div>
-                        </td>
-                        <td>
-                            <div class="texto-reserva text-center">
-                                -->
-                            </div>
-                        </td>
-                        <td>
-                            <div class="texto-reserva text-center">
-                                10:00
+                                Piscina --> 10:00
                             </div>
                         </td>
                         <td>
@@ -155,17 +143,7 @@
                     <tr id="Sala musculacion17:00">
                         <td>
                             <div class="texto-reserva text-center">
-                                Sala musculacion
-                            </div>
-                        </td>
-                        <td>
-                            <div class="texto-reserva text-center">
-                                -->
-                            </div>
-                        </td>
-                        <td>
-                            <div class="texto-reserva text-center">
-                                17:00
+                                Gimnasio --> 17:00
                             </div>
                         </td>
                         <td>
@@ -177,17 +155,7 @@
                     <tr id="Yoga19:00">
                         <td>
                             <div class="texto-reserva text-center">
-                                Yoga
-                            </div>
-                        </td>
-                        <td>
-                            <div class="texto-reserva text-center">
-                                -->
-                            </div>
-                        </td>
-                        <td>
-                            <div class="texto-reserva text-center">
-                                19:00
+                                Yoga --> 19:00
                             </div>
                         </td>
                         <td>
@@ -198,7 +166,6 @@
                     </tr>
                 </table>
             </div>
-        </article>
     </div>
     <!--CONTENT-->
 
