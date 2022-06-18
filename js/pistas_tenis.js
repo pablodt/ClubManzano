@@ -75,3 +75,8 @@ function calcularRandom() {
     random2 = Math.floor(Math.random() * (11 - 0 + 1) + 0);
     random3 = Math.floor(Math.random() * (11 - 0 + 1) + 0);
 }
+
+function setNone() {
+    pistas.style.display = "none";
+    selected_pista = undefined;
+}

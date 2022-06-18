@@ -39,6 +39,9 @@ function listarBotones(indice) {
                     seleccionado = true;
                     indice = i;
                 }
+                $.getScript("js/pistas.js", function () {
+                    setNone();
+                });
                 cambiarHora(indice);
                 listarBotones(indice);
             }

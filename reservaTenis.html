@@ -20,11 +20,11 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/datePicker.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        let selected_hora;
-        let selected_pista;
+        let selected_fecha;
 
         $(document).ready(function () {
             $("#navbar").load("navbar.html");
@@ -33,17 +33,6 @@
 
         function volver() {
             window.location.href = "index.html";
-        }
-
-        function reservar(hora) {
-            window.location.href = "reservar/" + hora;
-        }
-
-        function cambiarHora(hora) {
-            document.getElementById("pistas").style.display = "";
-            selected_hora = hora;
-            randomReservas();
-            console.log(selected_hora);
         }
     </script>
 </head>
