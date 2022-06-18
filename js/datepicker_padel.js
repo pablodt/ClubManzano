@@ -102,6 +102,9 @@ function populateDates(e) {
             if (doc != null) {
                 doc.textContent = formatDate(selectedDate);
             }
+            $.getScript("js/pistas.js", function () {
+                setNone();
+            });
         });
 
         days_element.appendChild(day_element);

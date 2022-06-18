@@ -102,6 +102,10 @@ function populateDates(e) {
             if (doc != null) {
                 doc.textContent = formatDate(selectedDate);
             }
+
+            $.getScript("js/pistas_tenis.js", function () {
+                setNone();
+            });
         });
 
         days_element.appendChild(day_element);
