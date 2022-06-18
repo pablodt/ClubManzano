@@ -1,4 +1,5 @@
 const pistas = document.getElementById('pistas');
+
 let selected_pista;
 
 pistas.style.display = "none";
@@ -16,9 +17,9 @@ function listarPistas() {
     pistas.style.display = "inline-block";
 
     //random
-    var random1 = getRandomArbitrary(1, 4);
-    var random2 = getRandomArbitrary(1, 4);
-    var random3 = getRandomArbitrary(1, 4);
+    var random1 = getRandomArbitrary(1, 5);
+    var random2 = getRandomArbitrary(1, 5);
+    var random3 = getRandomArbitrary(1, 5);
     var randomExtra = getRandomArbitrary(1, 4);
 
     console.log(random1);
@@ -71,19 +72,31 @@ function listarPistas() {
     if (!disponibleP1) {
         pista1.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" disabled>Pista 1</button>';
     } else {
-        pista1.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" onclick="cambiarPista("1")">Pista 1</button>';
+        pista1.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col">Pista 1</button>';
+        pista1.addEventListener('click', function () {
+            selected_pista = "1";
+            console.log(selected_pista);
+        });
     }
 
     if (!disponibleP2) {
         pista2.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" disabled>Pista 2</button>';
     } else {
-        pista2.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" onclick="cambiarPista("2")">Pista 2</button>';
+        pista2.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col">Pista 2</button>';
+        pista2.addEventListener('click', function () {
+            selected_pista = "2";
+            console.log(selected_pista);
+        });
     }
 
     if (!disponibleP3) {
         pista3.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" disabled>Pista 3</button>';
     } else {
-        pista3.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" onclick="cambiarPista("3")">Pista 3</button>';
+        pista3.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col">Pista 3</button>';
+        pista3.addEventListener('click', function () {
+            selected_pista = "3";
+            console.log(selected_pista);
+        });
     }
 }
 
@@ -91,9 +104,4 @@ function calcularRandom() {
     random1 = Math.floor(Math.random() * (11 - 0 + 1) + 0);
     random2 = Math.floor(Math.random() * (11 - 0 + 1) + 0);
     random3 = Math.floor(Math.random() * (11 - 0 + 1) + 0);
-}
-
-function cambiarPista(pista) {
-    selected_pista = pista;
-    console.log(selected_pista);
 }

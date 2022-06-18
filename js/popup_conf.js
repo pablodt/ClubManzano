@@ -2,7 +2,7 @@ const popupConf = document.querySelector('.popup_conf');
 const closeConf = document.querySelector('.popup-close');
 
 
-function pop_upConf(hora, dia, pista) {
+function pop_upConfPista(hora, dia, pista) {
 
     $(document).ready(function () {
             $('.popup_conf').css("display", "block");
