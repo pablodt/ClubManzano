@@ -28,4 +28,15 @@ function pop_upConf(hora, dia) {
     });
 }
 
+function pop_upContacto() {
+
+    $(document).ready(function () {
+            $('.popup_conf').css("display", "block");
+            $('.contacto').text("Se le responderá con la mayor brevedad posible");
+    });
+    $('.btn2').click(function () {
+        $('.popup_conf').css("display", "none");
+        window.location.href = "index.html";
+    });
+}
 
