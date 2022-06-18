@@ -222,6 +222,7 @@ h1 {
 
 .popup_box {
     font-family: 'Noto Sans TC', sans-serif;
+    font-size: 25px;
     width: 400px;
     background: #f2f2f2;
     text-align: center;
@@ -398,13 +399,44 @@ h1 {
     padding: 10px 13px;
 }
 
+.btns .btn3 {
+    background: #dc3545;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    padding: 10px 13px;
+}
+
+.btns .btn3:hover {
+    transition: .5s;
+    cursor: pointer;
+}
+
+.btns .btn4:hover {
+    transition: .5s;
+    cursor: pointer;
+}
+
+.btns .btn4 {
+    background: #198754;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    padding: 10px 13px;
+}
+
 .btns .btn2:hover {
     transition: .5s;
     background: #10805a;
     cursor: pointer;
 }
 
+
+
 input.larger {
     width: 50px;
     height: 50px;
 }
+

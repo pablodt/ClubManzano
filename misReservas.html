@@ -20,6 +20,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/datePicker.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
@@ -167,6 +168,23 @@
                     </tr>
                 </table>
             </div>
+
+            <!-- Pop-up CONFIRMACION -->
+    <div class="popup_box">
+        <i class="fas fa-exclamation"></i>
+        <br>
+        <label>¿Desea cancelar su reserva,</label>
+            <label class="evento_reserva"></label>
+            <label class="fecha_hora_reserva"></label>
+            <label>?</label>
+        <div class="btns">
+            <a class="btn3 mx-3">Volver</a>
+            <a class="btn4 mx-3">Cancelar</a>
+        </div>
+    </div>
+    <script src="js/popup_conf.js"></script>
+    <!-- Pop-up -->
+
     </div>
     <!--CONTENT-->
 
@@ -180,7 +198,9 @@
         crossorigin="anonymous"></script>
     <script type="text/javascript">
         function pasarParametros(evento, hora, dia, indice) {
-            window.location.href = "confirmacionCancelar.html?actividad=" + evento + "&hora=" + hora + "&dia=" + dia + "&indice=" + indice;
+            $.getScript("js/popup_conf.js", function () {
+                  pop_upMisReservas(evento,hora,dia,indice+1);
+            });
         }
     </script>
 

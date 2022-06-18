@@ -1,6 +1,6 @@
 const popupConf = document.querySelector('.popup_conf');
 const closeConf = document.querySelector('.popup-close');
-
+const popupBox = document.querySelector('.popup-box')
 
 function pop_upConfPista(hora, dia, pista) {
 
@@ -37,6 +37,25 @@ function pop_upContacto() {
     $('.btn2').click(function () {
         $('.popup_conf').css("display", "none");
         window.location.href = "index.html";
+    });
+}
+
+function pop_upMisReservas(evento,hora,dia,indice) {
+
+    $(document).ready(function () {
+            $('.popup_box').css("display", "block");
+            $('.fecha_hora_reserva').text(dia + " a las " + hora);
+            $('.evento_reserva').text(evento);
+    });
+    
+    $('.btn4').click(function () {
+        $('.popup_box').css("display", "none");
+        window.location.href = "misReservas.html?indice="+indice;
+    });
+
+    $('.btn3').click(function () {
+        $('.popup_box').css("display", "none");
+        window.location.href = "misReservas.html?indice=-1";
     });
 }
 
