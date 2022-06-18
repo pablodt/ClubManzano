@@ -2,7 +2,17 @@ const pistas = document.getElementById('pistas');
 
 let selected_pista;
 
-pistas.style.display = "none";
+let disponibleP1 = true;
+let disponibleP2 = true;
+let disponibleP3 = true;
+
+let pista1 = document.querySelector('#pista1');
+let pista2 = document.querySelector('#pista2');
+let pista3 = document.querySelector('#pista3');
+
+pista1.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 1</button>';
+pista2.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 2</button>';
+pista3.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 3</button>';
 
 // FUNCTIONS
 function getRandomArbitrary(min, max) {
@@ -10,25 +20,19 @@ function getRandomArbitrary(min, max) {
 }
 
 function listarPistas() {
-    let pista1 = document.querySelector('#pista1');
-    let pista2 = document.querySelector('#pista2');
-    let pista3 = document.querySelector('#pista3');
-
-    pistas.style.display = "inline-block";
-
     //random
-    var random1 = getRandomArbitrary(1, 5);
-    var random2 = getRandomArbitrary(1, 5);
-    var random3 = getRandomArbitrary(1, 5);
+    var random1 = getRandomArbitrary(1, 6);
+    var random2 = getRandomArbitrary(1, 6);
+    var random3 = getRandomArbitrary(1, 6);
     var randomExtra = getRandomArbitrary(1, 4);
+
+    disponibleP1 = true;
+    disponibleP2 = true;
+    disponibleP3 = true;
 
     console.log(random1);
     console.log(random2);
     console.log(random3);
-
-    let disponibleP1 = true;
-    let disponibleP2 = true;
-    let disponibleP3 = true;
 
     pista1.innerHTML = '';
     pista2.innerHTML = '';
@@ -70,32 +74,83 @@ function listarPistas() {
     }
 
     if (!disponibleP1) {
-        pista1.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" disabled>Pista 1</button>';
+        pista1.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 1</button>';
     } else {
-        pista1.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col">Pista 1</button>';
+        pista1.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col">Pista 1</button>';
         pista1.addEventListener('click', function () {
-            selected_pista = "1";
-            console.log(selected_pista);
+            console.log(disponibleP1);
+            if (disponibleP1) {
+                selected_pista = "1";
+                console.log(selected_pista);
+
+                pista1.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col active">Pista 1</button>';
+
+                if (disponibleP2) {
+                    pista2.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col">Pista 2</button>';
+                } else {
+                    pista2.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 2</button>';
+                }
+
+                if (disponibleP3) {
+                    pista3.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col">Pista 3</button>';
+                } else {
+                    pista3.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 3</button>';
+                }
+            }
         });
     }
 
     if (!disponibleP2) {
-        pista2.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" disabled>Pista 2</button>';
+        pista2.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 2</button>';
     } else {
-        pista2.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col">Pista 2</button>';
+        pista2.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col">Pista 2</button>';
         pista2.addEventListener('click', function () {
-            selected_pista = "2";
-            console.log(selected_pista);
+            console.log(disponibleP2);
+            if (disponibleP2) {
+                selected_pista = "2";
+                console.log(selected_pista);
+
+                pista2.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col active">Pista 2</button>';
+
+                if (disponibleP1) {
+                    pista1.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col">Pista 1</button>';
+                } else {
+                    pista1.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 1</button>';
+                }
+
+                if (disponibleP3) {
+                    pista3.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col">Pista 3</button>';
+                } else {
+                    pista3.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 3</button>';
+                }
+            }
         });
     }
 
     if (!disponibleP3) {
-        pista3.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col" disabled>Pista 3</button>';
+        pista3.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 3</button>';
     } else {
-        pista3.innerHTML = '<button class="btn btn-outline-secondary w-25 m-3 col">Pista 3</button>';
+        pista3.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col">Pista 3</button>';
         pista3.addEventListener('click', function () {
-            selected_pista = "3";
-            console.log(selected_pista);
+            console.log(disponibleP3);
+            if (disponibleP3) {
+                selected_pista = "3";
+                console.log(selected_pista);
+
+                pista3.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col active">Pista 3</button>';
+
+                if (disponibleP1) {
+                    pista1.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col">Pista 1</button>';
+                } else {
+                    pista1.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 1</button>';
+                }
+
+                if (disponibleP2) {
+                    pista2.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col">Pista 2</button>';
+                } else {
+                    pista2.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 2</button>';
+                }
+            }
         });
     }
 }
@@ -107,6 +162,11 @@ function calcularRandom() {
 }
 
 function setNone() {
-    pistas.style.display = "none";
+    pista1.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 1</button>';
+    pista2.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 2</button>';
+    pista3.innerHTML = '<button class="btn btn-outline-secondary w-100 m-3 col" disabled>Pista 3</button>';
+    disponibleP1 = false;
+    disponibleP2 = false;
+    disponibleP3 = false;
     selected_pista = undefined;
 }
